@@ -11,38 +11,45 @@
       },
       {
         "name": "CADEIRA ABDUTORA",
-        "sets": "3xx8 a 12",
+        "sets": "4xx8 a 12",
         "rest": "60 seg",
         "details": "1 seg de isometria no pico. Progressão de carga.",
         "video": "https://youtube.com/shorts/ehJD5TaEdXw"
       },
       {
-        "name": "AGACHAMENTO SMITH",
-        "sets": "4xx6 a 10",
+        "name": "ELEVAÇÃO PÉLVICA",
+        "sets": "4xx8 a 12",
         "rest": "60 seg",
+        "details": "Fase negativa (descida) de 5 segundos. Progressão de carga.",
+        "video": "https://youtube.com/shorts/vc88T3fi30w"
+      }, 
+      {
+        "name": "AGACHAMENTO SMITH",
+        "sets": "1xx12 a 15 / 2xx 4-6 / 3xx 6-10 / 4xx 6-10 ",
+        "rest": "90 seg",
         "details": "Progressão de carga.",
         "video": "https://youtube.com/shorts/ZSLSanHSuf0"
       },
       {
-        "name": "AGACHAMENTO HACK",
-        "sets": "4xx15-20 / 10-15 / 8-12 / 6-10",
-        "rest": "60 seg",
-        "details": "Pirâmide. Não descolar a lombar. Força na ponta dos pés.",
-        "video": "https://youtube.com/shorts/z9KVabnz0kI"
-      },
-      {
         "name": "LEG PRESS",
         "sets": "4xx12 a 15",
-        "rest": "60 seg",
-        "details": "Não descolar a lombar. Força na ponta dos pés.",
+        "rest": "90 seg",
+        "details": "Progressão de carga.",
         "video": "https://youtube.com/shorts/d1W2YnVMtJs"
       },
       {
         "name": "CADEIRA EXTENSORA",
-        "sets": "4xx15-20 / 10-15 / 8-12 / 6-10",
-        "rest": "60 seg",
+        "sets": "4xx6-10",
+        "rest": "90 seg",
         "details": "Pirâmide. Progressão de carga.",
         "video": "https://youtube.com/shorts/lMuTTuTn25U"
+      },
+      {
+        "name": "MESA FLEXORA",
+        "sets": "4xx6 a 10",
+        "rest": "60 seg",
+        "details": "Pirâmide. Tronco levantado. Progressão de carga.",
+        "video": "https://youtube.com/shorts/id8RIktejA0"
       }
     ]
   },
@@ -54,7 +61,7 @@
         "sets": "1xx20 seg",
         "rest": "-",
         "details": "",
-        "video": "https://www.youtube.com/shorts/1yElQu1suCg?feature=share"
+        "video": "https://www.youtube.com/shorts/1yElQu1suCg"
       },
       {
         "name": "ABDOMINAL BANCO DECLINADO",
@@ -64,39 +71,46 @@
         "video": "https://youtube.com/shorts/Pr7xpL5HyuU"
       },
       {
-        "name": "ABDOMINAL ELEVAÇÃO DE PERNAS NA BARRA",
+        "name": "ABDOMINAL ELEVAÇÃO DE PERNAS NO BANCO RETO",
         "sets": "4xx15",
         "rest": "60 seg",
         "details": "Usar halter entre os pés.",
-        "video": "https://youtube.com/shorts/Pr7xpL5HyuU"
+        "video": "https://youtube.com/shorts/txBQDAc2vho"
       },
       {
-        "name": "CRUCIFIXO INCLINADO NO CROSS",
-        "sets": "4xx15",
+        "name": "CRUCIFIXO INCLINADO + SUPINO INCLINADO COM HALTERES",
+        "sets": "4xx8-12 / 4xx8-12 ",
         "rest": "60 seg",
-        "details": "1 seg de isometria no pico. Progressão de carga.",
-        "video": "https://youtube.com/shorts/rB6EzQGGgPo"
+        "details": "PROGRESSÃO DE CARGA BI-SET",
+        "video": "https://youtube.com/shorts/n9zecf2WIGk"
       },
       {
         "name": "SUPINO INCLINADO (Máquina ou Guiada)",
         "sets": "4xx15-20 / 10-15 / 8-12 / 6-10",
         "rest": "60 seg",
-        "details": "Pirâmide. Progressão de carga.",
+        "details": "Progressão de carga.",
         "video": "https://youtube.com/shorts/YlTXIypK4DE"
       },
       {
         "name": "VOADOR",
-        "sets": "4xx8 a 12",
+        "sets": "4xx6 a 10",
         "rest": "60 seg",
         "details": "1 seg de isometria no pico. Progressão de carga.",
         "video": "https://youtube.com/shorts/tyxgBHW5QT0"
       },
       {
         "name": "CROSSOVER",
-        "sets": "4xx8 a 12",
+        "sets": "4xx6 a 10",
         "rest": "60 seg",
         "details": "1 seg de isometria no pico. Progressão de carga.",
         "video": "https://youtube.com/shorts/JMlE-9zjojk"
+      },
+      {
+        "name": "ELEVAÇÃO LATERAL EM PÉ",
+        "sets": "4xx12 a 15",
+        "rest": "60 seg",
+        "details": "Progressão de carga.",
+        "video": "https://youtube.com/shorts/9bdB9xIy7Lw"
       }
     ]
   },
@@ -112,43 +126,50 @@
       },
       {
         "name": "REMADA LIVRE PRONADA",
-        "sets": "4xx15-20 / 10-15 / 8-12 / 6-10",
+        "sets": "1xx12-15 / 2xx4-6 / 3xx6-10 / 4xx6-10",
         "rest": "60 seg",
-        "details": "Pirâmide. Progressão de carga.",
+        "details": "Progressão de carga.",
         "video": "https://youtube.com/shorts/xv83HSBX0Is"
       },
       {
         "name": "REMADA TRIÂNGULO NA MÁQUINA",
         "sets": "4xx10 a 15",
-        "rest": "60 seg",
+        "rest": "90 seg",
         "details": "Progressão de carga."
       },
       {
-        "name": "PUXADA ALTA PRONADA",
-        "sets": "4xx8 a 12 (até a falha)",
-        "rest": "60 seg",
-        "details": "Após falhar, fazer +5 repetições \"roubadas\" (com balanço).",
-        "video": "https://youtube.com/shorts/AghqwxH9t-o"
+        "name": "PUXADA ALTA SUPINADA",
+        "sets": "4xx8 a 12",
+        "rest": "90 seg",
+        "details": "APÓS FALHAR + 5 REPETIÇÕES ROUBADAS, PODE BALANÇAR.",
+        "video": "https://youtube.com/shorts/F5-qX1Y4tAY"
       },
       {
-        "name": "PULLDOWN COM CORDA",
+        "name": "REMADA ABERTA PRONADA MAQUINA",
         "sets": "4xx8 a 12",
-        "rest": "60 seg",
-        "details": "1 seg de isometria no pico. Progressão de carga.",
-        "video": "https://youtube.com/shorts/CRO70zonVBU"
+        "rest": "90 seg",
+        "details": "1 SEG ISOMETRIA / PROGRESSÃO DE CARGA",
+        "video": "https://youtube.com/shorts/FzqskRw4LUg"
       },
       {
         "name": "MEIO TERRA",
-        "sets": "4xx15-20 / 10-15 / 8-12 / 6-10",
-        "rest": "60 seg",
-        "details": "Pirâmide. Progressão de carga.",
+        "sets": "1xx15-20 / 2xx4-6 / 3xx6-10 / 4xx6-10",
+        "rest": "90 seg",
+        "details": "Progressão de carga.",
         "video": "https://youtube.com/shorts/pwz6nMbQyDg"
+      },
+      {
+        "name": "CRUCIFIXO INVERTIDO NO VOADOR",
+        "sets": "4xx15",
+        "rest": "90 seg",
+        "details": "COTOVELOS ALTOS – ALTURA DO OMBRO / PROGRESSÃO DE CARGA",
+        "video": "https://youtube.com/shorts/tyxgBHW5QT0"
       },
       {
         "name": "ROSCA DIRETA CROSS PEGADA ABERTA",
         "sets": "4xx15-20 / 10-15 / 8-12 / 6-10",
-        "rest": "60 seg",
-        "details": "Pirâmide. Na última série, fazer +2 drops de 6 reps.",
+        "rest": "90 seg",
+        "details": "Na última série, fazer +2 drops de 6 reps.",
         "video": "https://youtube.com/shorts/0gE7VE6fwVk"
       },
       {
@@ -179,31 +200,24 @@
       },
       {
         "name": "MESA FLEXORA",
-        "sets": "4xx15-20 / 10-15 / 8-12 / 6-10",
+        "sets": "1xx12-15 / 2xx4-6 / 3xx6-10 / 4xx6-10",
         "rest": "60 seg",
         "details": "Pirâmide. Tronco levantado. Progressão de carga.",
-        "video": "https://youtube.com/shorts/z7kS838CVTY"
+        "video": "https://youtube.com/shorts/id8RIktejA0"
       },
       {
-        "name": "CADEIRA FLEXORA",
-        "sets": "4xx8 a 12",
+        "name": "FLEXOR DEITADO COM HALTER NO BANCO DECLINADO",
+        "sets": "3xx12 a 15",
         "rest": "60 seg",
         "details": "3 seg de isometria no pico. Progressão de carga.",
-        "video": "https://youtube.com/shorts/icNMJ2r8l10"
+        "video": "https://www.youtube.com/watch?v=dnfhFxP10vs"
       },
       {
         "name": "STIFF COM BARRA",
         "sets": "4xx8 a 12",
         "rest": "60 seg",
-        "details": "Focar na amplitude. Progressão de carga.",
+        "details": "CALCANHAR PARA DENTRO - PROGRESSÃO DE CARGA ",
         "video": "https://youtube.com/shorts/R_74rXlwEzM"
-      },
-      {
-        "name": "FLEXOR DEITADO COM HALTER",
-        "sets": "4xx12 a 15",
-        "rest": "60 seg",
-        "details": "1 seg de isometria no pico.",
-        "video": "https://youtube.com/shorts/z7kS838CVTY"
       },
       {
         "name": "CADEIRA ABDUTORA",
@@ -214,10 +228,17 @@
       },
       {
         "name": "ELEVAÇÃO PÉLVICA",
-        "sets": "4xx6 a 10",
+        "sets": "4xx8 a 12",
         "rest": "60 seg",
-        "details": "Fase negativa (descida) de 5 segundos. Progressão de carga.",
+        "details": "1 SEG ISOMETRIA.",
         "video": "https://youtube.com/shorts/vc88T3fi30w"
+      },
+      {
+        "name": "AFUNDO NA BARRA SMITH",
+        "sets": "4xx8 a 12",
+        "rest": "90 seg",
+        "details": "SEM DESCANSO ENTRE AS PERNAS",
+        "video": "https://www.youtube.com/shorts/1YCdHu-vCHg"
       }
     ]
   },
@@ -225,67 +246,74 @@
     "name": "DIA 5",
     "exercises": [
       {
-        "name": "ALONGAMENTO ESCÁPULA/OMBRO",
-        "sets": "2xx15 seg",
-        "rest": "15 seg",
-        "details": "",
-        "video": "https://www.youtube.com/shorts/AwA7fzu8ajE?feature=share"
-      },
-      {
         "name": "PANTURRILHA EM PÉ",
-        "sets": "4xx15-20",
+        "sets": "3xx15-20",
         "rest": "60 seg",
         "details": "Máxima amplitude. Progressão de carga.",
         "video": "https://youtube.com/shorts/PnJusKZCYJg"
       },
       {
-        "name": "DESENVOLVIMENTO (Máquina ou Guiada)",
-        "sets": "4xx15-20 / 10-15 / 8-12 / 6-10",
+        "name": "PANTURRILHA EM SENTADO",
+        "sets": "3xx15-20",
         "rest": "60 seg",
-        "details": "Pirâmide. Progressão de carga.",
-        "video": "https://youtube.com/shorts/F_NELqjt3Dc"
+        "details": "Máxima amplitude. Progressão de carga.",
+        "video": ""
       },
       {
-        "name": "ELEVAÇÃO LATERAL EM PÉ",
-        "sets": "4xx12 a 15",
-        "rest": "60 seg",
+        "name": "DESENVOLVIMENTO NA BARRA (GUIADA)",
+        "sets": "1xx12-15 / 2xx4-6 / 3xx6-10 / 4xx6-10",
+        "rest": "90 seg",
         "details": "Progressão de carga.",
-        "video": "https://youtube.com/shorts/9bdB9xIy7Lw"
+        "video": "https://youtube.com/shorts/_FwpSCcuxHg"
       },
       {
         "name": "ELEVAÇÃO LATERAL PARCIAL NO CROSS",
-        "sets": "4xx12 a 15",
-        "rest": "60 seg",
-        "details": "Progressão de carga.",
+        "sets": "4xx15",
+        "rest": "90 seg",
+        "details": "PROGRESSÃO DE CARGA;USAR MUITO PESO, DESCER TUDO E SUBIR POUCO",
         "video": "https://youtube.com/shorts/Hr4uNIQh7t4"
       },
       {
-        "name": "CRUCIFIXO INVERTIDO NO VOADOR",
-        "sets": "4xx12 a 15",
-        "rest": "60 seg",
-        "details": "Progressão de carga.",
-        "video": "https://youtube.com/shorts/tyxgBHW5QT0"
+        "name": "ELEVAÇÃO LATERAL EM PÉ",
+        "sets": "4xx15 / +15 (50%) / + +15 (20%)",
+        "rest": "90 seg",
+        "details": "PROG DE CARGA;NÃO DESCER A COXA,2 DROPS TSerie",
+        "video": "https://youtube.com/shorts/9bdB9xIy7Lw"
       },
       {
-        "name": "ELEVAÇÃO FRONTAL NO CROSS COM CORDA",
-        "sets": "4xx12 a 15",
-        "rest": "60 seg",
-        "details": "Progressão de carga.",
-        "video": "https://youtube.com/shorts/Wk7xLVy68QQ"
+        "name": "ELEVAÇÃO LATERAL NO BANCO INCLINADO",
+        "sets": "4xx15",
+        "rest": "90 seg",
+        "details": "BANCO 45º, DESCER ATÉ O OMBRO, SUBIR ATÉ PASSAR DA ALTURA DA CABEÇA (MEXE SÓ UNS 30º)",
+        "video": "https://youtube.com/shorts/bjyj0g7fsmk"
       },
       {
-        "name": "TRÍCEPS TESTA CORDA BANCO INCLINADO",
+        "name": "CRUCIFIXO INVERTIDO EM PÉ COM HALTERES",
+        "sets": "4xx15",
+        "rest": "90 seg",
+        "details": "PROGRESSÃO DE CARGA;COTOVELO E PESO DO LADO DO OMBRO, NEM PRA FRENTE E NEM PRA TRÁS",
+        "video": "https://www.youtube.com/shorts/C9Q9so5Fqws"
+      },
+      {
+        "name": "ELEVAÇÃO FRONTAL COM HALTERES PRESSIONADOS",
+        "sets": "4xx12 a 15",
+        "rest": "60 seg",
+        "details": "PROGRESSÃO DE CARGA;DESCER ATÉ O UMBIGO, SUBIR ATÉ O QUEIXO;FAZER FORÇA ENTRE OS HALTERES, PRESSIONAR UM NO OUTRO COMO SE QUISER SOLDAR ELES",
+        "video": "https://www.youtube.com/shorts/GqZRmCow0rw"
+      },
+      {
+        "name": "TESTA COM BARRA NO CROSS EM PÉ",
         "sets": "4xx15-20 / 10-15 / 8-12 / 6-10",
         "rest": "60 seg",
         "details": "Pirâmide. Progressão de carga.",
-        "video": "https://youtube.com/shorts/MxLDRJBMG0g"
+        "video": "https://www.youtube.com/shorts/aNr8yjs34nM"
       },
       {
-        "name": "TRÍCEPS COM BARRA NO CROSS",
-        "sets": "4xx12 a 15",
+        "name": "TRÍCEPS CORDA",
+        "sets": "4xx15",
         "rest": "60 seg",
         "details": "Progressão de carga.",
-        "video": "https://youtube.com/shorts/5fTFhKEl-C0"
+        "video": "https://youtube.com/shorts/pwLdXxkXcv4"
       }
     ]
   }
