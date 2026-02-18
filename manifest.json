@@ -2,10 +2,10 @@
   "name": "💪 GH Personal - Norman Training",
   "short_name": "GH Personal",
   "description": "App de treino personalizado - Diego Norman Morais Barros",
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#667eea",
-  "theme_color": "#667eea",
+  "background_color": "#1e3c72",
+  "theme_color": "#1e3c72",
   "orientation": "portrait",
   "icons": [
     {
