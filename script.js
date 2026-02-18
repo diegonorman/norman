@@ -327,20 +327,35 @@ function loginGoogle() {
 }
 
 function openVideo(url) {
+    // Se tiver múltiplos vídeos separados por |
+    if (url.includes(' | ')) {
+        const videos = url.split(' | ');
+        const videoList = videos.map((v, i) => `<a href="#" onclick="openSingleVideo('${v.trim()}'); return false;" style="display: block; padding: 15px; margin: 10px 0; background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-decoration: none; border-radius: 10px; text-align: center; font-weight: bold;">🎥 Vídeo ${i + 1}</a>`).join('');
+        
+        const modal = document.getElementById('video-modal');
+        const iframe = document.getElementById('video-frame');
+        iframe.style.display = 'none';
+        iframe.innerHTML = `<div style="padding: 20px; text-align: center;"><h3 style="color: white; margin-bottom: 20px;">Escolha qual vídeo assistir:</h3>${videoList}</div>`;
+        modal.classList.remove('hidden');
+        return;
+    }
+    
+    openSingleVideo(url);
+}
+
+function openSingleVideo(url) {
     const iframe = document.getElementById('video-frame');
     const videoPlayer = document.getElementById('video-player');
     
     if (url.includes('drive.google.com')) {
         const fileId = url.split('/d/')[1]?.split('/')[0];
-        
-        // Usar iframe embed simples (funciona melhor)
         const embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
         
         videoPlayer.style.display = 'none';
         iframe.style.display = 'block';
         iframe.src = embedUrl;
     } else {
-        // YouTube continua igual
+        // YouTube
         let embedUrl = url;
         
         if (url.includes('youtube.com/watch')) {
@@ -907,4 +922,28 @@ if (!document.querySelector('#save-notification-styles')) {
     style.id = 'save-notification-styles';
     style.textContent = saveNotificationCSS;
     document.head.appendChild(style);
+}
+
+// Função para alternar entre dietas
+function showDiet(type) {
+    // Esconder todas as dietas
+    document.querySelectorAll('.diet-plan').forEach(plan => {
+        plan.classList.remove('active');
+        plan.style.display = 'none';
+    });
+    
+    // Remover active de todos os botões
+    document.querySelectorAll('.diet-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Mostrar a dieta selecionada
+    const selectedDiet = document.getElementById(`diet-${type}`);
+    if (selectedDiet) {
+        selectedDiet.classList.add('active');
+        selectedDiet.style.display = 'block';
+    }
+    
+    // Ativar o botão clicado
+    event.target.classList.add('active');
 }

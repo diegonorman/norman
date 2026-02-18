@@ -83,239 +83,358 @@
                 </div>
             </div>
 
-            <!-- Seção de Nutrição -->
-            <div id="nutrition-section" class="section">
-                <div class="nutrition-content">
-                    <div class="info-card">
-                        <h3>🧠 Regras Gerais & Organização da Semana</h3>
+            <!-- Seção de Nutrição ATUALIZADA -->
+<div id="nutrition-section" class="section">
+    <div class="nutrition-content">
+        <div class="info-card">
+            <h3>🧠 Regras Gerais & Organização da Semana</h3>
+            <ul>
+                <li><strong>Calorias necessárias:</strong> 2.850 (atuais: 2.700)</li>
+                <li><strong>Objetivo:</strong> Hipertrofia e saúde física</li>
+                <li><strong>Refeição livre:</strong> 1x/semana, sem rodízios (+ metformina antes)</li>
+                <li><strong>Hidratação:</strong> 5-6L água/dia</li>
+                <li><strong>Permitidos:</strong> Adoçantes zero, refrigerantes zero, sucos/chás zero, gelatina zero, café (até 16h), condimentos</li>
+                <li><strong>Gordura preparo:</strong> Apenas sprays ou limpar panela após derretimento</li>
+                <li><strong>Sal:</strong> 8g fragmentados ao longo do dia (2g por refeição)</li>
+                <li><strong>Suplementos:</strong> Para 60 dias</li>
+            </ul>
+        </div>
+
+        <!-- Botões para alternar entre dietas -->
+        <div class="diet-toggle">
+            <button class="diet-btn active" onclick="showDiet('alto')">🔥 1 DIA ALTO CARBO</button>
+            <button class="diet-btn" onclick="showDiet('baixo')">⚡ 2 DIAS BAIXO CARBO</button>
+        </div>
+
+        <!-- DIETA ALTO CARBO -->
+        <div id="diet-alto" class="diet-plan active">
+            <div class="meal-card">
+                <h3>🍳 1ª Refeição - Lanche da Manhã</h3>
+                <ul>
+                    <li>Ovo (03)</li>
+                    <li>Pão (02 fatias ou 01 cacetinho) ou Tapioca 35g</li>
+                    <li>Queijo mussarela (02)</li>
+                    <li>Chia (10g)</li>
+                    <li>1 colher de vinagre de maçã + 200ml de água</li>
+                </ul>
+            </div>
+
+            <div class="meal-card">
+                <h3>🍌 2ª Refeição - Lanche da Manhã</h3>
+                <p><strong>Escolher uma fruta:</strong></p>
+                <ul>
+                    <li>Banana, Laranja, Maçã, Pera (01)</li>
+                    <li>Mamão (100g)</li>
+                    <li>Melão, Morango (150g)</li>
+                </ul>
+            </div>
+
+            <div class="meal-card">
+                <h3>🍽️ 3ª Refeição - Almoço</h3>
+                <p><strong>Proteína (escolher 1):</strong></p>
+                <ul>
+                    <li>Frango sem pele (250g)</li>
+                    <li>Filé de peixe (300g)</li>
+                </ul>
+                <p><strong>Carboidrato (escolher 1):</strong></p>
+                <ul>
+                    <li>Arroz/Mandioca/Cuscuz (100g)</li>
+                    <li>Batata Inglesa/Doce (200g ou 150g assada)</li>
+                </ul>
+                <ul>
+                    <li>Legumes (200g) + Salada verde à vontade</li>
+                    <li>Abacaxi (200g)</li>
+                </ul>
+                <p><em>*Nos dias em que não comer feijão, pode adicionar 50g de qualquer outro carboidrato escolhido.</em></p>
+                <p><em>*Pode usar fígado bovino e moela de frango</em></p>
+            </div>
+
+            <div class="meal-card">
+                <h3>🥤 4ª Refeição - Lanche (escolher uma opção)</h3>
+                <div class="meal-options">
+                    <div class="meal-option">
+                        <h4>Opção 1 - Mingau com frutas</h4>
                         <ul>
-                            <li><strong>Calorias necessárias:</strong> 2.850 (atuais: 2.700)</li>
-                            <li><strong>Objetivo:</strong> Hipertrofia e saúde física</li>
-                            <li><strong>Refeição livre:</strong> 1x/semana, sem rodízios (+ metformina antes)</li>
-                            <li><strong>Hidratação:</strong> 5-6L água/dia</li>
-                            <li><strong>Permitidos:</strong> Adoçantes zero, refrigerantes zero, sucos/chás zero, gelatina zero, café (até 16h), condimentos</li>
-                            <li><strong>Gordura preparo:</strong> Apenas sprays ou limpar panela após derretimento</li>
-                            <li><strong>Sal:</strong> 8g fragmentados ao longo do dia (2g por refeição)</li>
-                            <li><strong>Suplementos:</strong> Para 60 dias</li>
+                            <li>Whey (01 dose)</li>
+                            <li>Aveia (10g)</li>
+                            <li>Escolher uma fruta: Banana, Laranja, Maçã, Pera (01); Mamão (100g); Melão, Morango (150g)</li>
+                            <li>Iogurte zero (100g)</li>
                         </ul>
                     </div>
-
-                    <div class="meal-card">
-                        <h3>🍳 1ª Refeição - Lanche da Manhã</h3>
+                    <div class="meal-option">
+                        <h4>Opção 2 - Bolinho com frutas</h4>
                         <ul>
-                            <li>Ovo (03)</li>
-                            <li>Pão (02 fatias ou 01 cacetinho) ou Tapioca 35g</li>
-                            <li>Queijo mussarela (02)</li>
-                            <li>Chia (10g)</li>
-                            <li>1 colher de vinagre de maçã + 200ml de água</li>
+                            <li>Whey (01 dose)</li>
+                            <li>Claras de ovo (02)</li>
+                            <li>Aveia (10g)</li>
+                            <li>Escolher uma fruta: Banana, Laranja, Maçã, Pera (01); Mamão (100g); Melão, Morango (150g)</li>
+                            <li>Iogurte zero (100g)</li>
                         </ul>
                     </div>
-
-                    <div class="meal-card">
-                        <h3>🍌 2ª Refeição - Lanche da Manhã</h3>
-                        <p><strong>Escolher uma fruta:</strong></p>
+                    <div class="meal-option">
+                        <h4>Opção 3 - Refeição sólida</h4>
                         <ul>
-                            <li>Banana, Laranja, Maçã, Pera (02)</li>
-                            <li>Mamão (200g)</li>
-                            <li>Melão, Morango (300g)</li>
-                        </ul>
-                    </div>
-
-                    <div class="meal-card">
-                        <h3>🍽️ 3ª Refeição - Almoço</h3>
-                        <p><strong>Proteína (escolher 1):</strong></p>
-                        <ul>
-                            <li>Frango sem pele (250g)</li>
-                            <li>Filé de peixe (300g)</li>
-                        </ul>
-                        <p><strong>Carboidrato (escolher 1):</strong></p>
-                        <ul>
-                            <li>Arroz/Mandioca/Cuscuz (150g)</li>
-                            <li>Batata Inglesa/Doce (300g ou 200g assada)</li>
-                        </ul>
-                        <ul>
-                            <li>Feijão (100g - grãos)</li>
-                            <li>Legumes (200g) + Salada verde à vontade</li>
-                            <li>Abacaxi (200g)</li>
-                        </ul>
-                        <p><em>*Nos dias em que não comer feijão, pode adicionar 50g de qualquer outro carboidrato escolhido.</em></p>
-                        <p><em>*Pode usar fígado bovino e moela de frango</em></p>
-                    </div>
-
-                    <div class="meal-card">
-                        <h3>🥤 4ª Refeição - Lanche (escolher uma opção)</h3>
-                        <div class="meal-options">
-                            <div class="meal-option">
-                                <h4>Opção 1 - Mingau com frutas</h4>
-                                <ul>
-                                    <li>Whey (01 dose)</li>
-                                    <li>Aveia (30g)</li>
-                                    <li>Escolher uma fruta: Banana, Laranja, Maçã, Pera (02); Mamão (200g); Melão, Morango (300g)</li>
-                                    <li>Iogurte zero (100g)</li>
-                                </ul>
-                            </div>
-                            <div class="meal-option">
-                                <h4>Opção 2 - Bolinho com frutas</h4>
-                                <ul>
-                                    <li>Whey (01 dose)</li>
-                                    <li>Claras de ovo (02)</li>
-                                    <li>Aveia (30g)</li>
-                                    <li>Escolher uma fruta: Banana, Laranja, Maçã, Pera (02); Mamão (200g); Melão, Morango (300g)</li>
-                                    <li>Iogurte zero (100g)</li>
-                                </ul>
-                            </div>
-                            <div class="meal-option">
-                                <h4>Opção 3 - Refeição sólida</h4>
-                                <ul>
-                                    <li>Proteína (escolher 1): Frango sem pele (80g); Filé de peixe (100g)</li>
-                                    <li>Carboidrato (escolher 1): Arroz/Mandioca/Cuscuz (150g); Batata Inglesa/Doce (300g ou 200g assada)</li>
-                                    <li>Salada verde à vontade</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p><strong>*Adicionar 30g de Mel a qualquer refeição escolhida nos dias de costas, quadríceps e posterior.</strong></p>
-                        <p><em>*Pode misturar frutas.</em></p>
-                    </div>
-
-                    <div class="meal-card">
-                        <h3>🌙 5ª Refeição - Jantar</h3>
-                        <p><strong>Proteína (escolher 1):</strong></p>
-                        <ul>
-                            <li>Frango sem pele (250g)</li>
-                            <li>Filé de peixe (300g)</li>
-                        </ul>
-                        <p><strong>Carboidrato (escolher 1):</strong></p>
-                        <ul>
-                            <li>Arroz/Mandioca/Cuscuz (150g)</li>
-                            <li>Batata Inglesa/Doce (300g ou 200g assada)</li>
-                        </ul>
-                        <ul>
-                            <li>Legumes (200g) + Salada verde à vontade</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>🍽️ Alimentação - Ordem de Consumo</h3>
-                        <ol>
-                            <li><strong>1º Salada:</strong> Comece pela salada para fornecer fibras e prebióticos que auxiliam na digestão</li>
-                            <li><strong>2º Legumes:</strong> Em seguida, consuma os legumes, que são ricos em vitaminas e minerais</li>
-                            <li><strong>3º Proteínas:</strong> As proteínas são mais complexas de digerir, portanto, ingeri-las após as saladas e legumes ajuda a desacelerar a digestão e a promover a saciedade</li>
-                            <li><strong>4º Grãos e demais carboidratos:</strong> Por fim, consuma os grãos e outros carboidratos, que fornecem energia para o corpo</li>
-                        </ol>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>🏃‍♀️ Aeróbicos</h3>
-                        <ul>
-                            <li><strong>Frequência:</strong> 5x na semana (bike, esteira, escada ou elíptico)</li>
-                            <li><strong>Duração:</strong> 40 minutos por sessão (pós treino ou em turno alternado, nunca antes)</li>
-                            <li><strong>Intensidade:</strong> Frequência cardíaca: 120 bpm (com ofegância)</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>😴 Sono</h3>
-                        <ul>
-                            <li>Dormir no mínimo 7h por noite, com rotina fixa</li>
-                            <li>Evitar telas por pelo menos 1h antes de dormir</li>
-                            <li>Preferir ambiente escuro e silencioso</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>😌 Estresse e Bem-estar</h3>
-                        <ul>
-                            <li>Praticar respiração profunda, meditação ou alongamento regularmente</li>
-                            <li>Buscar pausas ao longo do dia e reduzir sobrecargas</li>
-                            <li>Ter momentos prazerosos e interações sociais positivas</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>🦷 Higiene e Saúde Bucal</h3>
-                        <ul>
-                            <li>Escovar os dentes após todas as refeições, inclusive lanches</li>
-                            <li>Utilizar limpador de língua diariamente</li>
-                            <li>Higienizar gengiva, bochechas e céu da boca suavemente</li>
-                            <li>Usar enxaguante bucal sem álcool (2x ao dia)</li>
-                            <li>Consultar dentista regularmente para avaliar causas do comprometimento do paladar</li>
-                            <li>Consumir frutas cítricas para estimular a salivação e recuperar o paladar</li>
+                            <li>Proteína (escolher 1): Frango sem pele (80g); Filé de peixe (100g)</li>
+                            <li>Carboidrato (escolher 1): Arroz/Mandioca/Cuscuz (00g); Batata Inglesa/Doce (200g ou 150g assada)</li>
+                            <li>Salada verde à vontade</li>
                         </ul>
                     </div>
                 </div>
+                <p><em>*Pode misturar frutas.</em></p>
             </div>
 
-            <!-- Seção de Suplementos -->
-            <div id="supplements-section" class="section">
-                <div class="supplements-content">
-                    <div class="supplement-time">
-                        <h3>🌅 Ao Acordar (imediatamente)</h3>
+            <div class="meal-card">
+                <h3>🌙 5ª Refeição - Jantar</h3>
+                <p><strong>Proteína (escolher 1):</strong></p>
+                <ul>
+                    <li>Frango sem pele (250g)</li>
+                    <li>Filé de peixe (300g)</li>
+                </ul>
+                <p><strong>Carboidrato (escolher 1):</strong></p>
+                <ul>
+                    <li>Arroz/Mandioca/Cuscuz (100g)</li>
+                    <li>Batata Inglesa/Doce (200g ou 150g assada)</li>
+                </ul>
+                <ul>
+                    <li>Legumes (200g) + Salada verde à vontade</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DIETA BAIXO CARBO -->
+        <div id="diet-baixo" class="diet-plan" style="display: none;">
+            <div class="meal-card">
+                <h3>🍳 1ª Refeição - Lanche da Manhã</h3>
+                <ul>
+                    <li>Ovo (05)</li>
+                    <li>Queijo mussarela (01)</li>
+                    <li>Chia (10g)</li>
+                    <li>1 colher de vinagre de maçã + 200ml de água</li>
+                </ul>
+            </div>
+
+            <div class="meal-card">
+                <h3>🍌 2ª Refeição - Lanche da Manhã</h3>
+                <p><strong>Escolher uma fruta:</strong></p>
+                <ul>
+                    <li>Banana, Laranja, Maçã, Pera (01)</li>
+                    <li>Mamão (100g)</li>
+                    <li>Melão, Morango (150g)</li>
+                </ul>
+            </div>
+
+            <div class="meal-card">
+                <h3>🍽️ 3ª Refeição - Almoço</h3>
+                <p><strong>Proteína (escolher 1):</strong></p>
+                <ul>
+                    <li>Frango sem pele (300g)</li>
+                    <li>Filé de peixe (350g)</li>
+                </ul>
+                <ul>
+                    <li>Legumes (200g) + Salada verde à vontade</li>
+                    <li>Abacaxi (200g)</li>
+                </ul>
+                <p><em>*Nos dias em que não comer feijão, pode adicionar 50g de qualquer outro carboidrato escolhido.</em></p>
+                <p><em>*Pode usar fígado bovino e moela de frango</em></p>
+            </div>
+
+            <div class="meal-card">
+                <h3>🥤 4ª Refeição - Lanche (escolher uma opção)</h3>
+                <div class="meal-options">
+                    <div class="meal-option">
+                        <h4>Opção 1 - Mingau com frutas</h4>
                         <ul>
-                            <li>Metformina 500mg</li>
-                            <li>Rhodiola Rosea 150mg</li>
-                            <li>Ashwagandha 300mg</li>
-                            <li>Ioimbina 20mg</li>
-                            <li>Morosil 500mg</li>
+                            <li>Whey (01 dose)</li>
+                            <li>Aveia (10g)</li>
+                            <li>Escolher uma fruta: Banana, Laranja, Maçã, Pera (01); Mamão (100g); Melão, Morango (150g)</li>
+                            <li>Iogurte zero (100g)</li>
                         </ul>
-                        <p><em>*Tomar um comprimido de Metformina a mais antes de fazer qualquer refeição fora da dieta. Tenha sempre junto.</em></p>
                     </div>
-
-                    <div class="supplement-time">
-                        <h3>🍳 Pós-Desjejum</h3>
+                    <div class="meal-option">
+                        <h4>Opção 2 - Bolinho com frutas</h4>
                         <ul>
-                            <li>Ômega 3 DHA – 400mg</li>
-                            <li>Curcumina 500mg</li>
-                            <li>Creatina 5g</li>
+                            <li>Whey (01 dose)</li>
+                            <li>Claras de ovo (02)</li>
+                            <li>Aveia (10g)</li>
+                            <li>Escolher uma fruta: Banana, Laranja, Maçã, Pera (01); Mamão (100g); Melão, Morango (150g)</li>
+                            <li>Iogurte zero (100g)</li>
                         </ul>
                     </div>
-
-                    <div class="supplement-time">
-                        <h3>🍽️ Pós-Almoço</h3>
+                    <div class="meal-option">
+                        <h4>Opção 3 - Refeição sólida</h4>
                         <ul>
-                            <li>Enzimas digestivas manipuladas – 01 dose</li>
-                            <li>(Amilase 50mg, Protease 25mg, Bromelina 25mg, Papaína 50mg, Pepsina 100mg, Lipase 25mg)</li>
+                            <li>Proteína (escolher 1): Frango sem pele (80g); Filé de peixe (100g)</li>
+                            <li>Carboidrato (escolher 1): Arroz/Mandioca/Cuscuz (00g); Batata Inglesa/Doce (200g ou 150g assada)</li>
+                            <li>Salada verde à vontade</li>
                         </ul>
                     </div>
+                </div>
+                <p><em>*Pode misturar frutas.</em></p>
+            </div>
 
-                    <div class="supplement-time">
-                        <h3>🌙 Pós-Janta</h3>
-                        <ul>
-                            <li>Fórmula do Sono - 01 dose</li>
-                            <li>Magnésio Treonato 300mg + Apigenina 50mg + Teanina 200mg</li>
-                        </ul>
-                    </div>
+            <div class="meal-card">
+                <h3>🌙 5ª Refeição - Jantar</h3>
+                <p><strong>Proteína (escolher 1):</strong></p>
+                <ul>
+                    <li>Frango sem pele (300g)</li>
+                    <li>Filé de peixe (350g)</li>
+                </ul>
+                <ul>
+                    <li>Legumes (200g) + Salada verde à vontade</li>
+                </ul>
+            </div>
+        </div>
 
-                    <div class="supplement-time">
-                        <h3>💪 Pré-Treino (30min antes - proibido cafeína em razão da gastrite)</h3>
-                        <ul>
-                            <li>Beta-alanina 1g</li>
-                            <li>Taurina 1g</li>
-                            <li>L-Tirosina 1g</li>
-                        </ul>
-                    </div>
-<div class="info-card" style="font-family: sans-serif; border: 1px solid #4CAF50; border-radius: 10px; padding: 20px; max-width: 550px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-    <h3 style="color: #2E7D32; border-bottom: 2px solid #4CAF50; padding-bottom: 10px; text-transform: uppercase;">🔥 Protocolo: Foco Trincar (4 Semanas)</h3>
-    <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 12px;"><strong>Enantato de Testosterona:</strong> 500mg/semana (3x aplicações: Seg/Qua/Sex)</li>
-        <li style="margin-bottom: 12px;"><strong>Masteron (200mg/ml):</strong> 300mg/semana (3x aplicações: Seg/Qua/Sex)</li>
-        <li style="margin-bottom: 12px;"><strong>Hemogenin (Finalização):</strong> 50mg/dia (Apenas por mais 15 dias)</li>
-        <li style="margin-bottom: 12px;"><strong>Halotestin:</strong> 20mg (Pré-treino, 3x na semana nos dias mais pesados)</li>
-        <li style="margin-bottom: 12px;"><strong>AAS:</strong> 100mg/dia (Manter para controle de viscosidade sanguínea)</li>
-    </ul>
+        <div class="info-card">
+            <h3>🍽️ Alimentação - Ordem de Consumo</h3>
+            <ol>
+                <li><strong>1º Salada:</strong> Comece pela salada para fornecer fibras e prebióticos que auxiliam na digestão</li>
+                <li><strong>2º Legumes:</strong> Em seguida, consuma os legumes, que são ricos em vitaminas e minerais</li>
+                <li><strong>3º Proteínas:</strong> As proteínas são mais complexas de digerir, portanto, ingeri-las após as saladas e legumes ajuda a desacelerar a digestão e a promover a saciedade</li>
+                <li><strong>4º Grãos e demais carboidratos:</strong> Por fim, consuma os grãos e outros carboidratos, que fornecem energia para o corpo</li>
+            </ol>
+        </div>
 
-    <div style="background: rgba(76, 175, 80, 0.1); padding: 15px; border-radius: 10px; margin: 15px 0; border-left: 5px solid #4CAF50;">
-        <h4 style="color: #2E7D32; margin: 0 0 10px 0;">🎯 LOGÍSTICA DE APLICAÇÃO (Na mesma seringa):</h4>
-        <ul style="margin: 0; padding-left: 20px;">
-            <li><strong>Testosterona (250mg/ml):</strong> 0,67 ml por aplicação</li>
-            <li><strong>Masteron (200mg/ml):</strong> 0,5 ml por aplicação</li>
-            <li style="margin-top: 8px; font-weight: bold; font-size: 1.1em;">Total: 1,17 ml por aplicação (Segunda, Quarta e Sexta)</li>
-        </ul>
-    </div>
+        <div class="info-card">
+            <h3>🏃♀️ Aeróbicos</h3>
+            <ul>
+                <li><strong>Frequência:</strong> 5x na semana (bike, esteira, escada ou elíptico)</li>
+                <li><strong>Duração:</strong> 45 minutos por sessão (pós treino ou em turno alternado, nunca antes)</li>
+                <li><strong>Intensidade:</strong> Frequência cardíaca: 120 bpm (com ofegância)</li>
+            </ul>
+        </div>
 
-    <div style="background: #f9f9f9; padding: 10px; border-radius: 5px; font-size: 13px;">
-        <strong>Cardio Obrigatório:</strong> 25 min de Escada (Nível 5-6) ou 30 min Esteira Inclinada (5%).
+        <div class="info-card">
+            <h3>😴 Sono</h3>
+            <ul>
+                <li>Dormir no mínimo 7h por noite, com rotina fixa</li>
+                <li>Evitar telas por pelo menos 1h antes de dormir</li>
+                <li>Preferir ambiente escuro e silencioso</li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <h3>😌 Estresse e Bem-estar</h3>
+            <ul>
+                <li>Praticar respiração profunda, meditação ou alongamento regularmente</li>
+                <li>Buscar pausas ao longo do dia e reduzir sobrecargas</li>
+                <li>Ter momentos prazerosos e interações sociais positivas</li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <h3>🦷 Higiene e Saúde Bucal</h3>
+            <ul>
+                <li>Escovar os dentes após todas as refeições, inclusive lanches</li>
+                <li>Utilizar limpador de língua diariamente</li>
+                <li>Higienizar gengiva, bochechas e céu da boca suavemente</li>
+                <li>Usar enxaguante bucal sem álcool (2x ao dia)</li>
+                <li>Consultar dentista regularmente para avaliar causas do comprometimento do paladar</li>
+                <li>Consumir frutas cítricas para estimular a salivação e recuperar o paladar</li>
+            </ul>
+        </div>
     </div>
 </div>
+
+
+            <!-- Seção de Suplementos ATUALIZADA -->
+<div id="supplements-section" class="section">
+    <div class="supplements-content">
+        <div class="supplement-time">
+            <h3>🌅 Ao Acordar (imediatamente)</h3>
+            <ul>
+                <li>Metformina 500mg</li>
+                <li>Rhodiola Rosea 150mg</li>
+                <li>Ashwagandha 300mg</li>
+                <li>Ioimbina 20mg</li>
+                <li>Morosil 500mg</li>
+                <li>Clenbuterol 2ml (lavizoo)</li>
+            </ul>
+            <p><em>*Tomar um comprimido de Metformina a mais antes de fazer qualquer refeição fora da dieta. Tenha sempre junto.</em></p>
+        </div>
+
+        <div class="supplement-time">
+            <h3>🍳 Pós-Desjejum</h3>
+            <ul>
+                <li>Ômega 3 DHA – 400mg</li>
+                <li>Curcumina 500mg</li>
+                <li>Creatina 5g</li>
+            </ul>
+        </div>
+
+        <div class="supplement-time">
+            <h3>🍽️ Pós-Almoço</h3>
+            <ul>
+                <li>Enzimas digestivas manipuladas – 01 dose</li>
+                <li>(Faseoalmina 200mg + Cassiolamina 200mg)</li>
+            </ul>
+        </div>
+
+        <div class="supplement-time">
+            <h3>🌙 Pós-Janta</h3>
+            <ul>
+                <li>Fórmula do Sono - 01 dose</li>
+                <li>Magnésio Treonato 300mg + Apigenina 50mg + Teanina 200mg</li>
+            </ul>
+        </div>
+
+        <div class="supplement-time">
+            <h3>💪 Pré-Treino (30min antes - proibido cafeína em razão da gastrite)</h3>
+            <ul>
+                <li>Beta-alanina 1g</li>
+                <li>Taurina 1g</li>
+                <li>L-Tirosina 1g</li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <h3>💉 Protocolo</h3>
+            <ul>
+                <li><strong>Enantato de testosterona:</strong> 500mg/semana (3x: seg, qua, sex)</li>
+                <li><strong>Masteron:</strong> 300mg/semana (3x: seg, qua, sex)</li>
+                <li><strong>Boldenona:</strong> 300mg/semana (3x: seg, qua, sex)</li>
+                <li><strong>Hemogenin:</strong> 100mg + 400mg de cafeína, 1h antes de todos os treinos</li>
+                <li><strong>Aplicação:</strong> Pode fazer tudo na mesma seringa, sempre pela manhã ou antes do treino, nunca antes de dormir</li>
+                <li><strong>Locais:</strong> Fazer rodízio de aplicações na dorsal (latíssimo), ombro (lateral) e quadríceps (vasto lateral)</li>
+            </ul>
+            
+            <div style="background: rgba(76, 175, 80, 0.1); padding: 15px; border-radius: 10px; margin: 15px 0;">
+                <h4 style="color: #4CAF50; margin: 0 0 10px 0;">💉 QUANTIDADES NA SERINGA (por aplicação):</h4>
+                
+                <p style="margin: 10px 0; font-weight: bold;">📌 Testosterona (250mg/ml):</p>
+                <ul style="margin: 5px 0 10px 20px;">
+                    <li>500mg ÷ 250mg/ml = 2ml por semana</li>
+                    <li>2ml ÷ 3 aplicações = <strong style="color: #4CAF50;">0,67ml por aplicação</strong></li>
+                </ul>
+                
+                <p style="margin: 10px 0; font-weight: bold;">📌 Masteron (100mg/ml):</p>
+                <ul style="margin: 5px 0 10px 20px;">
+                    <li>300mg ÷ 100mg/ml = 3ml por semana</li>
+                    <li>3ml ÷ 3 aplicações = <strong style="color: #4CAF50;">1ml por aplicação</strong></li>
+                </ul>
+                
+                <p style="margin: 10px 0; font-weight: bold;">📌 Boldenona (escolha sua concentração):</p>
+                <ul style="margin: 5px 0 10px 20px;">
+                    <li><strong>Se 200mg/ml:</strong> 300mg ÷ 200mg/ml = 1,5ml/semana → 1,5ml ÷ 3 = <strong style="color: #4CAF50;">0,5ml por aplicação</strong></li>
+                    <li><strong>Se 250mg/ml:</strong> 300mg ÷ 250mg/ml = 1,2ml/semana → 1,2ml ÷ 3 = <strong style="color: #4CAF50;">0,4ml por aplicação</strong></li>
+                </ul>
+                
+                <div style="background: rgba(255, 152, 0, 0.1); padding: 10px; border-radius: 8px; margin-top: 15px; border-left: 4px solid #FF9800;">
+                    <p style="margin: 0; font-weight: bold; color: #FF9800;">🎯 TOTAL NA SERINGA (3x por semana):</p>
+                    <ul style="margin: 5px 0 0 20px;">
+                        <li><strong>Testosterona:</strong> 0,67ml</li>
+                        <li><strong>Masteron:</strong> 1ml</li>
+                        <li><strong>Boldenona 200mg/ml:</strong> 0,5ml</li>
+                        <li style="border-top: 1px solid #FF9800; margin-top: 5px; padding-top: 5px;"><strong style="font-size: 16px; color: #FF9800;">TOTAL: 2,17ml por aplicação</strong></li>
+                    </ul>
+                    <p style="margin: 10px 0 0 0; font-size: 12px; font-style: italic;">*Se Boldenona for 250mg/ml, total será 2,07ml</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
             <!-- Seção de Horários -->
             <div id="schedule-section" class="section">
                 <div class="schedule-content">

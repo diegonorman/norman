@@ -6,7 +6,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
     background-size: 400% 400%;
     background-attachment: fixed;
     min-height: 100vh;
@@ -37,7 +37,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
     padding: 15px 10px 20px 10px;
     text-align: center;
@@ -113,7 +113,7 @@ header::before {
 }
 
 .progress {
-    background: linear-gradient(90deg, #4CAF50, #45a049, #4CAF50);
+    background: linear-gradient(90deg, #1e88e5, #1565c0, #4CAF50);
     background-size: 200% 100%;
     height: 100%;
     width: 0%;
@@ -192,7 +192,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 10px;
@@ -252,14 +252,14 @@ main {
 }
 
 .workout-day-box.active {
-    background: linear-gradient(135deg, #4CAF50, #45a049);
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
     color: white;
     transform: scale(1.1);
     box-shadow: 0 3px 10px rgba(76, 175, 80, 0.4);
 }
 
 .workout-btn.active {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
     transform: translateY(-1px);
 }
@@ -470,7 +470,7 @@ main {
     align-items: center;
     gap: 4px;
     padding: 6px 10px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
     border: none;
     border-radius: 8px;
@@ -548,7 +548,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -664,7 +664,7 @@ main {
 .add-alarm-btn {
     width: 100%;
     padding: 10px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
     border: none;
     border-radius: 8px;
@@ -774,7 +774,7 @@ main {
 }
 
 .close-timer, .save-alarm {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
 }
 
@@ -949,7 +949,7 @@ header::before {
 }
 
 .progress {
-    background: linear-gradient(90deg, #4CAF50, #45a049, #4CAF50);
+    background: linear-gradient(90deg, #1e88e5, #1565c0, #4CAF50);
     background-size: 200% 100%;
     height: 100%;
     width: 0%;
@@ -1287,7 +1287,7 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
     padding: 10px 16px;
     border-radius: 25px;
@@ -1390,7 +1390,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -1493,7 +1493,7 @@ main {
 }
 
 .close-timer {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
     border: none;
     padding: 15px 30px;
@@ -1616,7 +1616,7 @@ main {
 }
 
 .workout-btn.active {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
     transform: translateY(-2px);
 }
@@ -1719,7 +1719,7 @@ main {
 .add-alarm-btn {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
     border: none;
     border-radius: 10px;
@@ -1787,7 +1787,7 @@ main {
 }
 
 .save-alarm {
-    background: linear-gradient(135deg, #4CAF50, #45a049);
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
     color: white;
 }
 
@@ -1836,7 +1836,7 @@ main {
 }
 
 .timer-content {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     padding: 40px;
     border-radius: 20px;
     text-align: center;
@@ -2057,7 +2057,7 @@ main {
 }
 
 .day-box.completed {
-    background: linear-gradient(135deg, #4CAF50, #45a049);
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
     color: white;
     transform: scale(1.1);
     box-shadow: 0 3px 10px rgba(76, 175, 80, 0.4);
@@ -2079,4 +2079,44 @@ main {
 .reset-week-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+}
+
+/* Estilos para alternância de dietas */
+.diet-toggle {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 0 10px;
+}
+
+.diet-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.5);
+    color: #666;
+}
+
+.diet-btn.active {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.diet-btn:hover {
+    transform: translateY(-2px);
+}
+
+.diet-plan {
+    display: none;
+}
+
+.diet-plan.active {
+    display: block;
 }
