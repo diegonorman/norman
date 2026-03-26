@@ -198,8 +198,8 @@ const WORKOUT_DATA = {
         "name": "ROSCA MARTELO COM HALTERES",
         "sets": "3x10-12",
         "rest": "60 seg",
-        "details": "Braquial + braquiorradial = largura do braço. Progressão de carga.",
-        "video": "https://www.youtube.com/shorts/x6JCKfdzPJE"
+        "details": "Em pé. Braquial + braquiorradial = largura do braço. Progressão de carga.",
+        "video": "https://www.youtube.com/shorts/0rRpv6o140o"
       }
     ]
   },
@@ -270,11 +270,11 @@ const WORKOUT_DATA = {
         "video": "https://youtube.com/shorts/vc88T3fi30w"
       },
       {
-        "name": "ROSCA SCOTT COM BARRA W",
+        "name": "ROSCA CONCENTRADA COM HALTER",
         "sets": "3x10-12",
         "rest": "60 seg",
-        "details": "Segundo estímulo semanal de bíceps. Pico do bíceps. Progressão de carga.",
-        "video": "https://www.youtube.com/shorts/x6JCKfdzPJE"
+        "details": "Segundo estímulo semanal de bíceps. Pico do bíceps sem risco de lesão. Progressão de carga.",
+        "video": ""
       }
     ]
   },
