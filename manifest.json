@@ -1,11 +1,11 @@
 {
-  "name": "💪 GH Personal - Norman Training",
+  "name": "💪 GH Personal - Dailza Training",
   "short_name": "GH Personal",
-  "description": "App de treino personalizado - Diego Norman Morais Barros",
+  "description": "App de treino personalizado - Dailza Santos",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#1e3c72",
-  "theme_color": "#1e3c72",
+  "background_color": "#d63384",
+  "theme_color": "#d63384",
   "orientation": "portrait",
   "icons": [
     {
@@ -24,5 +24,5 @@
   "categories": ["health", "fitness", "lifestyle"],
   "lang": "pt-BR",
   "scope": "./",
-  "id": "gh-personal-norman-training"
+  "id": "gh-personal-dailza-training"
 }

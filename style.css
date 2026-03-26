@@ -6,7 +6,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+    background: linear-gradient(135deg, #d63384 0%, #e91e8a 50%, #d63384 100%);
     background-size: 400% 400%;
     background-attachment: fixed;
     min-height: 100vh;
@@ -80,7 +80,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #d63384, #e91e8a);
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 10px;
@@ -209,7 +209,7 @@ body {
     align-items: center;
     gap: 4px;
     padding: 6px 10px;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #d63384, #e91e8a);
     color: white;
     border: none;
     border-radius: 8px;
@@ -281,7 +281,7 @@ body {
 }
 
 .close-timer, .save-alarm {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #d63384, #e91e8a);
     color: white;
 }
 
@@ -303,7 +303,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #e91e8a 0%, #d63384 100%);
     color: white;
     padding: 25px 20px;
     text-align: center;
@@ -408,7 +408,7 @@ main {
     margin-bottom: 20px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-left: 5px solid #667eea;
+    border-left: 5px solid #e91e8a;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -514,7 +514,7 @@ main {
 }
 
 .nav-btn.active:hover {
-    background: #5a6fd8;
+    background: #c2185b;
 }
 
 .exercise-details {
@@ -531,7 +531,7 @@ main {
     margin: 12px 0;
     font-weight: 600;
     font-size: 16px;
-    color: #667eea;
+    color: #e91e8a;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -546,7 +546,7 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #d63384, #e91e8a);
     color: white;
     padding: 10px 16px;
     border-radius: 25px;
@@ -649,7 +649,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #d63384, #e91e8a);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -669,7 +669,7 @@ main {
 
 .nav-btn:hover:not(.active) {
     background: rgba(102, 126, 234, 0.1);
-    color: #667eea;
+    color: #e91e8a;
 }
 
 .nav-btn:hover:not(.active) .nav-icon {
@@ -726,7 +726,7 @@ main {
 }
 
 .close-timer {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #d63384, #e91e8a);
     color: white;
     border: none;
     padding: 15px 30px;
@@ -817,7 +817,7 @@ main {
 }
 
 .workout-btn.active {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #d63384, #e91e8a);
     color: white;
     transform: translateY(-2px);
 }
@@ -876,7 +876,7 @@ main {
 
 .meal-option h4 {
     margin-bottom: 8px;
-    color: #667eea;
+    color: #e91e8a;
     font-size: 14px;
 }
 
@@ -898,7 +898,7 @@ main {
 .alarm-time {
     font-weight: 600;
     font-size: 16px;
-    color: #667eea;
+    color: #e91e8a;
 }
 
 .alarm-desc {
@@ -920,7 +920,7 @@ main {
 .add-alarm-btn {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #d63384, #e91e8a);
     color: white;
     border: none;
     border-radius: 10px;
@@ -968,7 +968,7 @@ main {
 
 .alarm-form input:focus, .alarm-form select:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #e91e8a;
 }
 
 .alarm-buttons {
@@ -1038,7 +1038,7 @@ main {
 }
 
 .timer-content {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #d63384, #e91e8a);
     padding: 40px;
     border-radius: 20px;
     text-align: center;
@@ -1306,7 +1306,7 @@ main {
 }
 
 .diet-btn.active {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #d63384, #e91e8a);
     color: white;
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);

@@ -187,7 +187,7 @@ function closeTimer() {
 function openVideo(url) {
     if (url.includes(' | ')) {
         const videos = url.split(' | ');
-        const videoList = videos.map((v, i) => `<a href="#" onclick="openSingleVideo('${v.trim()}'); return false;" style="display:block;padding:15px;margin:10px 0;background:linear-gradient(135deg,#1e3c72,#2a5298);color:white;text-decoration:none;border-radius:10px;text-align:center;font-weight:bold;">🎥 Vídeo ${i + 1}</a>`).join('');
+        const videoList = videos.map((v, i) => `<a href="#" onclick="openSingleVideo('${v.trim()}'); return false;" style="display:block;padding:15px;margin:10px 0;background:linear-gradient(135deg,#d63384,#e91e8a);color:white;text-decoration:none;border-radius:10px;text-align:center;font-weight:bold;">🎥 Vídeo ${i + 1}</a>`).join('');
         const iframe = document.getElementById('video-frame');
         iframe.style.display = 'none';
         iframe.innerHTML = `<div style="padding:20px;text-align:center;"><h3 style="color:white;margin-bottom:20px;">Escolha qual vídeo assistir:</h3>${videoList}</div>`;

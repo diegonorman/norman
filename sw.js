@@ -1,4 +1,4 @@
-const CACHE_NAME = 'treino-v3';
+const CACHE_NAME = 'treino-dailza-v1';
 const urlsToCache = [
   './',
   './index.html',
