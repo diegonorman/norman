@@ -274,7 +274,7 @@ const WORKOUT_DATA = {
         "sets": "3x10-12",
         "rest": "60 seg",
         "details": "Segundo estímulo semanal de bíceps. Pico do bíceps sem risco de lesão. Progressão de carga.",
-        "video": ""
+        "video": "https://www.youtube.com/shorts/c0vYYI_mbXU"
       }
     ]
   },
