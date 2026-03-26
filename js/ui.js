@@ -9,7 +9,7 @@ function showModal(message, onConfirm) {
             <p style="font-size:14px;line-height:1.5;margin-bottom:20px;color:#333;">${message}</p>
             <div style="display:flex;gap:10px;justify-content:center;">
                 ${isConfirm ? '<button id="modal-cancel" style="flex:1;padding:10px;border:none;border-radius:10px;background:rgba(255,107,107,0.2);color:#FF6B6B;font-weight:600;cursor:pointer;">Cancelar</button>' : ''}
-                <button id="modal-ok" style="flex:1;padding:10px;border:none;border-radius:10px;background:linear-gradient(135deg,#1e3c72,#2a5298);color:white;font-weight:600;cursor:pointer;">OK</button>
+                <button id="modal-ok" style="flex:1;padding:10px;border:none;border-radius:10px;background:linear-gradient(135deg,#d63384,#e91e8a);color:white;font-weight:600;cursor:pointer;">OK</button>
             </div>
         </div>
     `;
