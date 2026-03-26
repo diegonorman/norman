@@ -89,51 +89,75 @@
             <!-- Seção de Nutrição ATUALIZADA -->
 <div id="nutrition-section" class="section">
     <div class="nutrition-content">
-        <div class="info-card">
-            <h3>🧠 Regras Gerais & Organização da Semana</h3>
+        <div class="info-card" style="border-left: 4px solid #1e3c72;">
+            <h3>📊 Dados Bioimpedância (25/03/2026)</h3>
             <ul>
-                <li><strong>Calorias necessárias:</strong> 2.850 (atuais: 2.700)</li>
-                <li><strong>Objetivo:</strong> Hipertrofia e saúde física</li>
-                <li><strong>Refeição livre:</strong> 1x/semana, sem rodízios (+ metformina antes)</li>
-                <li><strong>Hidratação:</strong> 5-6L água/dia</li>
-                <li><strong>Permitidos:</strong> Adoçantes zero, refrigerantes zero, sucos/chás zero, gelatina zero, café (até 16h), condimentos</li>
-                <li><strong>Gordura preparo:</strong> Apenas sprays ou limpar panela após derretimento</li>
-                <li><strong>Sal:</strong> 8g fragmentados ao longo do dia (2g por refeição)</li>
-                <li><strong>Suplementos:</strong> Para 60 dias</li>
+                <li><strong>Peso atual:</strong> 86.5kg | <strong>Meta:</strong> ~80kg</li>
+                <li><strong>Gordura atual:</strong> 19.5% (16.9kg) | <strong>Meta:</strong> 13%</li>
+                <li><strong>Massa muscular:</strong> 40.9kg (manter)</li>
+                <li><strong>Perder:</strong> ~6.9kg de gordura pura</li>
+                <li><strong>Gordura visceral:</strong> 7 → meta: &lt;5</li>
+                <li><strong>Cintura-quadril:</strong> 0.95 → meta: &lt;0.90</li>
+                <li><strong>Score InBody:</strong> 93/100</li>
             </ul>
         </div>
 
-        <!-- Botões para alternar entre dietas -->
+        <div class="info-card">
+            <h3>🧠 Regras Gerais</h3>
+            <ul>
+                <li><strong>Meta calórica:</strong> ~2.700 kcal/dia (déficit médio-agressivo)</li>
+                <li><strong>TDEE estimado:</strong> ~3.400 kcal (com protocolo + clembu)</li>
+                <li><strong>Déficit:</strong> -700 kcal/dia</li>
+                <li><strong>Proteína:</strong> ~180g/dia (2.1g/kg — preservar músculo)</li>
+                <li><strong>Refeição livre:</strong> 1x/semana (~3.500 kcal max + metformina antes)</li>
+                <li><strong>Snack diário:</strong> 1 doce (~150 kcal) — já contabilizado</li>
+                <li><strong>Hidratação:</strong> 5-6L água/dia</li>
+                <li><strong>Permitidos:</strong> Adoçantes zero, refrigerantes zero, chás zero, café (até 16h)</li>
+                <li><strong>Gordura preparo:</strong> Apenas spray ou limpar panela</li>
+                <li><strong>Sal:</strong> 8g fragmentados ao longo do dia</li>
+            </ul>
+        </div>
+
+        <div class="info-card" style="border-left: 4px solid #4CAF50;">
+            <h3>📊 Distribuição Semanal</h3>
+            <ul>
+                <li><strong>6 dias dieta:</strong> ~2.700 kcal</li>
+                <li><strong>1 dia livre:</strong> ~3.500 kcal (moderado + metformina)</li>
+                <li><strong>Média semanal:</strong> ~2.814 kcal/dia</li>
+                <li><strong>Perda estimada:</strong> ~0.7-1kg/semana</li>
+                <li><strong>Tempo pra 13%:</strong> ~8-10 semanas</li>
+            </ul>
+        </div>
+
         <div class="diet-toggle">
             <button class="diet-btn active" onclick="showDiet('alto')">🔥 1 DIA ALTO CARBO</button>
             <button class="diet-btn" onclick="showDiet('baixo')">⚡ 2 DIAS BAIXO CARBO</button>
         </div>
 
-        <!-- DIETA ALTO CARBO -->
+        <!-- DIETA ALTO CARBO (~2.700 kcal) -->
         <div id="diet-alto" class="diet-plan active">
             <div class="meal-card">
-                <h3>🍳 1ª Refeição - Lanche da Manhã</h3>
+                <h3>🍳 1ª Refeição - Café da Manhã (~450 kcal)</h3>
                 <ul>
-                    <li>Ovo (03)</li>
-                    <li>Pão (02 fatias ou 01 cacetinho) ou Tapioca 35g</li>
-                    <li>Queijo mussarela (02)</li>
+                    <li>Ovo (03 inteiros)</li>
+                    <li>Pão integral (02 fatias) ou Tapioca 35g</li>
+                    <li>Queijo mussarela (02 fatias)</li>
                     <li>Chia (10g)</li>
                     <li>1 colher de vinagre de maçã + 200ml de água</li>
                 </ul>
             </div>
 
             <div class="meal-card">
-                <h3>🍌 2ª Refeição - Lanche da Manhã</h3>
+                <h3>🍌 2ª Refeição - Lanche da Manhã (~200 kcal)</h3>
                 <p><strong>Escolher uma fruta:</strong></p>
                 <ul>
                     <li>Banana, Laranja, Maçã, Pera (01)</li>
-                    <li>Mamão (100g)</li>
-                    <li>Melão, Morango (150g)</li>
+                    <li>Mamão (100g) | Melão, Morango (150g)</li>
                 </ul>
             </div>
 
             <div class="meal-card">
-                <h3>🍽️ 3ª Refeição - Almoço</h3>
+                <h3>🍽️ 3ª Refeição - Almoço (~700 kcal)</h3>
                 <p><strong>Proteína (escolher 1):</strong></p>
                 <ul>
                     <li>Frango sem pele (250g)</li>
@@ -148,46 +172,39 @@
                     <li>Legumes (200g) + Salada verde à vontade</li>
                     <li>Abacaxi (200g)</li>
                 </ul>
-                <p><em>*Nos dias em que não comer feijão, pode adicionar 50g de qualquer outro carboidrato escolhido.</em></p>
-                <p><em>*Pode usar fígado bovino e moela de frango</em></p>
+                <p><em>*Sem feijão = pode adicionar 50g de outro carbo.</em></p>
+                <p><em>*Pode usar fígado bovino e moela de frango.</em></p>
             </div>
 
             <div class="meal-card">
-                <h3>🥤 4ª Refeição - Lanche (escolher uma opção)</h3>
+                <h3>🥤 4ª Refeição - Lanche da Tarde (~400 kcal)</h3>
                 <div class="meal-options">
                     <div class="meal-option">
-                        <h4>Opção 1 - Mingau com frutas</h4>
+                        <h4>Opção 1 - Mingau</h4>
                         <ul>
-                            <li>Whey (01 dose)</li>
-                            <li>Aveia (10g)</li>
-                            <li>Escolher uma fruta: Banana, Laranja, Maçã, Pera (01); Mamão (100g); Melão, Morango (150g)</li>
-                            <li>Iogurte zero (100g)</li>
+                            <li>Whey (01 dose) + Aveia (10g)</li>
+                            <li>1 fruta + Iogurte zero (100g)</li>
                         </ul>
                     </div>
                     <div class="meal-option">
-                        <h4>Opção 2 - Bolinho com frutas</h4>
+                        <h4>Opção 2 - Bolinho</h4>
                         <ul>
-                            <li>Whey (01 dose)</li>
-                            <li>Claras de ovo (02)</li>
-                            <li>Aveia (10g)</li>
-                            <li>Escolher uma fruta: Banana, Laranja, Maçã, Pera (01); Mamão (100g); Melão, Morango (150g)</li>
-                            <li>Iogurte zero (100g)</li>
+                            <li>Whey (01 dose) + Claras (02) + Aveia (10g)</li>
+                            <li>1 fruta + Iogurte zero (100g)</li>
                         </ul>
                     </div>
                     <div class="meal-option">
-                        <h4>Opção 3 - Refeição sólida</h4>
+                        <h4>Opção 3 - Sólida</h4>
                         <ul>
-                            <li>Proteína (escolher 1): Frango sem pele (80g); Filé de peixe (100g)</li>
-                            <li>Carboidrato (escolher 1): Arroz/Mandioca/Cuscuz (00g); Batata Inglesa/Doce (200g ou 150g assada)</li>
-                            <li>Salada verde à vontade</li>
+                            <li>Frango (80g) ou Peixe (100g)</li>
+                            <li>Batata (200g) + Salada verde</li>
                         </ul>
                     </div>
                 </div>
-                <p><em>*Pode misturar frutas.</em></p>
             </div>
 
             <div class="meal-card">
-                <h3>🌙 5ª Refeição - Jantar</h3>
+                <h3>🌙 5ª Refeição - Jantar (~550 kcal)</h3>
                 <p><strong>Proteína (escolher 1):</strong></p>
                 <ul>
                     <li>Frango sem pele (250g)</li>
@@ -204,30 +221,29 @@
             </div>
         </div>
 
-        <!-- DIETA BAIXO CARBO -->
+        <!-- DIETA BAIXO CARBO (~2.500 kcal) -->
         <div id="diet-baixo" class="diet-plan" style="display: none;">
             <div class="meal-card">
-                <h3>🍳 1ª Refeição - Lanche da Manhã</h3>
+                <h3>🍳 1ª Refeição - Café da Manhã (~400 kcal)</h3>
                 <ul>
-                    <li>Ovo (05)</li>
-                    <li>Queijo mussarela (01)</li>
+                    <li>Ovo (05 inteiros)</li>
+                    <li>Queijo mussarela (01 fatia)</li>
                     <li>Chia (10g)</li>
                     <li>1 colher de vinagre de maçã + 200ml de água</li>
                 </ul>
             </div>
 
             <div class="meal-card">
-                <h3>🍌 2ª Refeição - Lanche da Manhã</h3>
+                <h3>🍌 2ª Refeição - Lanche da Manhã (~200 kcal)</h3>
                 <p><strong>Escolher uma fruta:</strong></p>
                 <ul>
                     <li>Banana, Laranja, Maçã, Pera (01)</li>
-                    <li>Mamão (100g)</li>
-                    <li>Melão, Morango (150g)</li>
+                    <li>Mamão (100g) | Melão, Morango (150g)</li>
                 </ul>
             </div>
 
             <div class="meal-card">
-                <h3>🍽️ 3ª Refeição - Almoço</h3>
+                <h3>🍽️ 3ª Refeição - Almoço (~650 kcal)</h3>
                 <p><strong>Proteína (escolher 1):</strong></p>
                 <ul>
                     <li>Frango sem pele (300g)</li>
@@ -237,46 +253,31 @@
                     <li>Legumes (200g) + Salada verde à vontade</li>
                     <li>Abacaxi (200g)</li>
                 </ul>
-                <p><em>*Nos dias em que não comer feijão, pode adicionar 50g de qualquer outro carboidrato escolhido.</em></p>
-                <p><em>*Pode usar fígado bovino e moela de frango</em></p>
+                <p><em>*Sem carboidrato pesado nos dias baixo carbo.</em></p>
             </div>
 
             <div class="meal-card">
-                <h3>🥤 4ª Refeição - Lanche (escolher uma opção)</h3>
+                <h3>🥤 4ª Refeição - Lanche da Tarde (~400 kcal)</h3>
                 <div class="meal-options">
                     <div class="meal-option">
-                        <h4>Opção 1 - Mingau com frutas</h4>
+                        <h4>Opção 1 - Mingau</h4>
                         <ul>
-                            <li>Whey (01 dose)</li>
-                            <li>Aveia (10g)</li>
-                            <li>Escolher uma fruta: Banana, Laranja, Maçã, Pera (01); Mamão (100g); Melão, Morango (150g)</li>
-                            <li>Iogurte zero (100g)</li>
+                            <li>Whey (01 dose) + Aveia (10g)</li>
+                            <li>1 fruta + Iogurte zero (100g)</li>
                         </ul>
                     </div>
                     <div class="meal-option">
-                        <h4>Opção 2 - Bolinho com frutas</h4>
+                        <h4>Opção 2 - Sólida</h4>
                         <ul>
-                            <li>Whey (01 dose)</li>
-                            <li>Claras de ovo (02)</li>
-                            <li>Aveia (10g)</li>
-                            <li>Escolher uma fruta: Banana, Laranja, Maçã, Pera (01); Mamão (100g); Melão, Morango (150g)</li>
-                            <li>Iogurte zero (100g)</li>
-                        </ul>
-                    </div>
-                    <div class="meal-option">
-                        <h4>Opção 3 - Refeição sólida</h4>
-                        <ul>
-                            <li>Proteína (escolher 1): Frango sem pele (80g); Filé de peixe (100g)</li>
-                            <li>Carboidrato (escolher 1): Arroz/Mandioca/Cuscuz (00g); Batata Inglesa/Doce (200g ou 150g assada)</li>
-                            <li>Salada verde à vontade</li>
+                            <li>Frango (80g) ou Peixe (100g)</li>
+                            <li>Batata (200g) + Salada verde</li>
                         </ul>
                     </div>
                 </div>
-                <p><em>*Pode misturar frutas.</em></p>
             </div>
 
             <div class="meal-card">
-                <h3>🌙 5ª Refeição - Jantar</h3>
+                <h3>🌙 5ª Refeição - Jantar (~500 kcal)</h3>
                 <p><strong>Proteína (escolher 1):</strong></p>
                 <ul>
                     <li>Frango sem pele (300g)</li>
@@ -286,24 +287,40 @@
                     <li>Legumes (200g) + Salada verde à vontade</li>
                 </ul>
             </div>
+        </div>
+
+        <div class="meal-card" style="border-left: 4px solid #FF9800;">
+            <h3>🍫 Snack Diário (~150 kcal) — PERMITIDO!</h3>
+            <p><strong>Escolher 1 por dia (já contabilizado):</strong></p>
+            <ul>
+                <li>1 Trento (130 kcal)</li>
+                <li>2 Bis (134 kcal)</li>
+                <li>1 Bombom Sonho de Valsa/Ouro Branco (~100 kcal)</li>
+                <li>1 Bolinho Ana Maria (140 kcal)</li>
+                <li>2 quadradinhos chocolate 70% (~100 kcal)</li>
+                <li>1 Paçoquinha (~130 kcal)</li>
+                <li>1 Picolé light (~80 kcal)</li>
+                <li>Gelatina zero à vontade (0 kcal)</li>
+            </ul>
+            <p><em>*Comer após almoço ou lanche da tarde. Nunca à noite.</em></p>
         </div>
 
         <div class="info-card">
-            <h3>🍽️ Alimentação - Ordem de Consumo</h3>
+            <h3>🍽️ Ordem de Consumo</h3>
             <ol>
-                <li><strong>1º Salada:</strong> Comece pela salada para fornecer fibras e prebióticos que auxiliam na digestão</li>
-                <li><strong>2º Legumes:</strong> Em seguida, consuma os legumes, que são ricos em vitaminas e minerais</li>
-                <li><strong>3º Proteínas:</strong> As proteínas são mais complexas de digerir, portanto, ingeri-las após as saladas e legumes ajuda a desacelerar a digestão e a promover a saciedade</li>
-                <li><strong>4º Grãos e demais carboidratos:</strong> Por fim, consuma os grãos e outros carboidratos, que fornecem energia para o corpo</li>
+                <li><strong>1º Salada:</strong> Fibras e prebióticos</li>
+                <li><strong>2º Legumes:</strong> Vitaminas e minerais</li>
+                <li><strong>3º Proteínas:</strong> Saciedade prolongada</li>
+                <li><strong>4º Carboidratos:</strong> Energia controlada</li>
             </ol>
         </div>
 
         <div class="info-card">
-            <h3>🏃♀️ Aeróbicos</h3>
+            <h3>🏃‍♀️ Aeróbicos</h3>
             <ul>
                 <li><strong>Frequência:</strong> 5x na semana (bike, esteira, escada ou elíptico)</li>
-                <li><strong>Duração:</strong> 45 minutos por sessão (pós treino ou em turno alternado, nunca antes)</li>
-                <li><strong>Intensidade:</strong> Frequência cardíaca: 120 bpm (com ofegância)</li>
+                <li><strong>Duração:</strong> 45 min (pós treino ou turno alternado, nunca antes)</li>
+                <li><strong>Intensidade:</strong> FC 120 bpm (com ofegância)</li>
             </ul>
         </div>
 
@@ -311,36 +328,32 @@
             <h3>😴 Sono</h3>
             <ul>
                 <li>Dormir no mínimo 7h por noite, com rotina fixa</li>
-                <li>Evitar telas por pelo menos 1h antes de dormir</li>
-                <li>Preferir ambiente escuro e silencioso</li>
+                <li>Evitar telas 1h antes de dormir</li>
+                <li>Ambiente escuro e silencioso</li>
             </ul>
         </div>
 
         <div class="info-card">
             <h3>😌 Estresse e Bem-estar</h3>
             <ul>
-                <li>Praticar respiração profunda, meditação ou alongamento regularmente</li>
-                <li>Buscar pausas ao longo do dia e reduzir sobrecargas</li>
-                <li>Ter momentos prazerosos e interações sociais positivas</li>
+                <li>Respiração profunda, meditação ou alongamento</li>
+                <li>Pausas ao longo do dia</li>
+                <li>Momentos prazerosos e interações sociais</li>
             </ul>
         </div>
 
         <div class="info-card">
-            <h3>🦷 Higiene e Saúde Bucal</h3>
+            <h3>🦷 Higiene Bucal</h3>
             <ul>
-                <li>Escovar os dentes após todas as refeições, inclusive lanches</li>
-                <li>Utilizar limpador de língua diariamente</li>
-                <li>Higienizar gengiva, bochechas e céu da boca suavemente</li>
-                <li>Usar enxaguante bucal sem álcool (2x ao dia)</li>
-                <li>Consultar dentista regularmente para avaliar causas do comprometimento do paladar</li>
-                <li>Consumir frutas cítricas para estimular a salivação e recuperar o paladar</li>
+                <li>Escovar após todas as refeições</li>
+                <li>Limpador de língua diário</li>
+                <li>Enxaguante sem álcool (2x/dia)</li>
+                <li>Frutas cítricas para paladar</li>
             </ul>
         </div>
     </div>
 </div>
 
-
-            <!-- Seção de Suplementos ATUALIZADA -->
 <div id="supplements-section" class="section">
     <div class="supplements-content">
         <div class="supplement-time">
