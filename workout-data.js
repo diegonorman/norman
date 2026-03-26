@@ -118,6 +118,13 @@ const WORKOUT_DATA = {
         "rest": "60 seg",
         "details": "Progressão de carga.",
         "video": "https://www.youtube.com/shorts/3ml7BhbddP0"
+      },
+      {
+        "name": "TRÍCEPS CORDA",
+        "sets": "3x12-15",
+        "rest": "60 seg",
+        "details": "Segundo estímulo semanal de tríceps. Abrir a corda no final. Progressão de carga.",
+        "video": "https://www.youtube.com/shorts/M88Bt4MMpkI"
       }
     ]
   },
@@ -186,6 +193,13 @@ const WORKOUT_DATA = {
         "rest": "90 seg",
         "details": "1 seg isometria. Progressão de carga.",
         "video": "https://www.youtube.com/shorts/2nv_TyYP7L0"
+      },
+      {
+        "name": "ROSCA MARTELO COM HALTERES",
+        "sets": "3x10-12",
+        "rest": "60 seg",
+        "details": "Braquial + braquiorradial = largura do braço. Progressão de carga.",
+        "video": "https://www.youtube.com/shorts/x6JCKfdzPJE"
       }
     ]
   },
@@ -254,6 +268,13 @@ const WORKOUT_DATA = {
         "rest": "60 seg",
         "details": "3 seg isometria. Progressão de carga.",
         "video": "https://youtube.com/shorts/vc88T3fi30w"
+      },
+      {
+        "name": "ROSCA SCOTT COM BARRA W",
+        "sets": "3x10-12",
+        "rest": "60 seg",
+        "details": "Segundo estímulo semanal de bíceps. Pico do bíceps. Progressão de carga.",
+        "video": "https://www.youtube.com/shorts/x6JCKfdzPJE"
       }
     ]
   },
@@ -273,6 +294,13 @@ const WORKOUT_DATA = {
         "rest": "60 seg",
         "details": "Máxima amplitude. Progressão de carga.",
         "video": "https://www.youtube.com/shorts/9fIw0ue8iQE"
+      },
+      {
+        "name": "CROSSOVER",
+        "sets": "3x10-12",
+        "rest": "60 seg",
+        "details": "Segundo estímulo semanal de peito. Progressão de carga.",
+        "video": "https://www.youtube.com/shorts/poe7X02U2qw"
       },
       {
         "name": "ALONGAMENTO ESCÁPULA/OMBRO",
