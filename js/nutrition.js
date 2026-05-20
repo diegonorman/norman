@@ -36,6 +36,41 @@ let ntMeal = 'cafe';
 const NT_MEAL_ICONS = { cafe: '☕', almoco: '🍛', lanche: '🍉', janta: '🍽️' };
 const NT_TODAY = new Date().toISOString().slice(0, 10);
 
+// === TDEE ADAPTATIVO (baseado em dados reais) ===
+function ntCalcRealTDEE() {
+  const weights = ntGetWeights();
+  const history = ntGetHistory();
+  if (weights.length < 2) return null;
+
+  // Pegar primeiro e último peso com pelo menos 7 dias de diferença
+  const first = weights[0];
+  const last = weights[weights.length - 1];
+  const d1 = new Date(first.date);
+  const d2 = new Date(last.date);
+  const days = Math.round((d2 - d1) / 86400000);
+  if (days < 7) return null;
+
+  // Calcular média de kcal consumidas no período
+  let totalKcal = 0;
+  let daysLogged = 0;
+  const keys = Object.keys(history);
+  keys.forEach(k => {
+    const date = new Date(k);
+    if (date >= d1 && date <= d2) {
+      totalKcal += history[k].kcal;
+      daysLogged++;
+    }
+  });
+  // Incluir hoje se está no range
+  if (daysLogged < 5) return null; // precisa de pelo menos 5 dias de dados
+
+  const avgKcal = totalKcal / daysLogged;
+  const weightChange = first.kg - last.kg; // positivo = perdeu peso
+  const tdeeReal = Math.round(avgKcal + (weightChange * 7700 / days));
+
+  return { tdee: tdeeReal, days, daysLogged, weightChange: weightChange.toFixed(2), avgKcal: Math.round(avgKcal) };
+}
+
 // === PERFIL / CALCULADORA TDEE ===
 function ntGetProfile() { return JSON.parse(localStorage.getItem('ntProfile') || 'null'); }
 function ntSaveProfile(p) { localStorage.setItem('ntProfile', JSON.stringify(p)); }
@@ -78,17 +113,25 @@ function ntShowProfile() {
     const defLabels = { leve: 'Leve (-300)', moderado: 'Moderado (-500)', agressivo: 'Agressivo (-750)', extremo: 'Extremo (-1000)' };
     const tdee = ntCalcTDEE(profile.peso, profile.altura, profile.idade, profile.sexo, profile.atividade, profile.boost || 0);
     const projSemanal = ((tdee - NT_GOAL) * 7 / 7700).toFixed(2);
+    const realTDEE = ntCalcRealTDEE();
+    const tdeeDisplay = realTDEE ? realTDEE.tdee : tdee;
+    const tdeeLabel = realTDEE ? 'TDEE REAL ✓' : 'TDEE (estimado)';
+    const projDisplay = ((tdeeDisplay - NT_GOAL) * 7 / 7700).toFixed(2);
+    // Se temos TDEE real, usar ele como NT_BURN
+    if (realTDEE) NT_BURN = realTDEE.tdee;
+
     el.innerHTML = `
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
         <h3 style="font-size:.8rem;margin:0">⚙️ Meu Perfil</h3>
         <button onclick="ntEditProfile()" style="background:var(--surface-3,#242424);color:var(--text-2,#a0a0a0);border:1px solid var(--border,#2a2a2a);padding:4px 10px;border-radius:6px;font-size:.65rem;cursor:pointer">✏️ Editar</button>
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-size:.7rem;text-align:center">
-        <div><div style="color:var(--text-3,#666)">TDEE REAL</div><div style="font-weight:700;font-size:.9rem">${tdee}</div></div>
+        <div><div style="color:var(--text-3,#666)">${tdeeLabel}</div><div style="font-weight:700;font-size:.9rem">${tdeeDisplay}</div></div>
         <div><div style="color:var(--text-3,#666)">META</div><div style="font-weight:700;font-size:.9rem;color:var(--green,#22c55e)">${NT_GOAL}</div></div>
-        <div><div style="color:var(--text-3,#666)">PERDA/SEM</div><div style="font-weight:700;font-size:.9rem;color:var(--orange,#f59e0b)">~${projSemanal}kg</div></div>
+        <div><div style="color:var(--text-3,#666)">PERDA/SEM</div><div style="font-weight:700;font-size:.9rem;color:var(--orange,#f59e0b)">~${projDisplay}kg</div></div>
       </div>
-      <div style="font-size:.6rem;color:var(--text-3,#666);margin-top:6px;text-align:center">${profile.peso}kg · ${profile.altura}cm · ${profile.idade}a · Déficit: ${defLabels[profile.deficit]}${profile.boost ? ' · 🔥 Boost: +' + profile.boost + ' kcal' : ''}</div>
+      <div style="font-size:.6rem;color:var(--text-3,#666);margin-top:6px;text-align:center">${profile.peso}kg · ${profile.altura}cm · ${profile.idade}a · Déficit: ${defLabels[profile.deficit]}${profile.boost ? ' · 🔥+' + profile.boost : ''}</div>
+      ${realTDEE ? '<div style="font-size:.55rem;color:var(--green,#22c55e);margin-top:4px;text-align:center">📊 Calculado com ' + realTDEE.daysLogged + ' dias de dados · média ' + realTDEE.avgKcal + ' kcal · ' + realTDEE.weightChange + 'kg perdidos em ' + realTDEE.days + ' dias</div>' : '<div style="font-size:.55rem;color:var(--text-3,#666);margin-top:4px;text-align:center">⏳ Registre peso + comida por 7+ dias para TDEE real adaptativo</div>'}
       <div style="display:flex;gap:4px;margin-top:8px;align-items:center;border-top:1px solid var(--border,#2a2a2a);padding-top:8px">
         <span style="font-size:.65rem;color:var(--text-3,#666)">⚖️</span>
         <input type="number" id="nt-weight" placeholder="kg" step="0.1" style="flex:1;padding:5px 8px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text,#f0f0f0);font-size:.8rem">
