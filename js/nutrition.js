@@ -247,6 +247,29 @@ function ntRenderWeekly() {
   }
   document.getElementById('nt-weeklyDeficit').textContent = Math.round(total) + ' kcal';
   document.getElementById('nt-weeklyLoss').textContent = '~' + (total / 7700).toFixed(2) + ' kg';
+
+  // Renderizar dias da semana
+  const el = document.getElementById('nt-weekDays');
+  if (!el) return;
+  const dayNames = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
+  const today = new Date();
+  const monday = new Date(today);
+  monday.setDate(today.getDate() - ((today.getDay() + 6) % 7)); // segunda desta semana
+  let html = '';
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(monday);
+    d.setDate(monday.getDate() + i);
+    const k = d.toISOString().slice(0, 10);
+    const isToday = k === NT_TODAY;
+    let logged = false;
+    if (k === NT_TODAY) { const log = ntGetLog(); logged = log.items.length > 0; }
+    else { logged = !!h[k]; }
+    const bg = logged ? 'var(--green,#22c55e)' : 'var(--surface-3,#242424)';
+    const color = logged ? '#fff' : 'var(--text-3,#666)';
+    const border = isToday ? '2px solid var(--accent,#6366f1)' : '1px solid var(--border,#2a2a2a)';
+    html += `<div style="width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:${bg};color:${color};border:${border}">${dayNames[d.getDay()]}</div>`;
+  }
+  el.innerHTML = html;
 }
 
 // === PESO ===
