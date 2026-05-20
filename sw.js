@@ -1,4 +1,4 @@
-const CACHE_NAME = 'treino-v4';
+const CACHE_NAME = 'treino-v5';
 const urlsToCache = [
   './',
   './index.html',
@@ -7,6 +7,7 @@ const urlsToCache = [
   './js/ui.js',
   './js/workout.js',
   './js/alarms.js',
+  './js/foods-db.js',
   './js/nutrition.js',
   './js/app.js',
   './manifest.json',

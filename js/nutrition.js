@@ -5,32 +5,128 @@ let NT_BURN = 2683;
 let NT_GOAL = 1700;
 let NT_MACROS = { prot: 185, carb: 160, fat: 45 };
 
-const NT_FOODS = [
-  { name: "Cuscuz de milho (cozido)", unit: "g", kcal: 112, prot: 2.5, carb: 25, fat: 0.3, default_qty: 150 },
-  { name: "Ovo inteiro", unit: "un", portion_g: 50, kcal: 146, prot: 13, carb: 0.6, fat: 10, default_qty: 3 },
-  { name: "Peito de frango grelhado", unit: "g", kcal: 159, prot: 32, carb: 0, fat: 3.2, default_qty: 150 },
-  { name: "Músculo bovino cozido", unit: "g", kcal: 171, prot: 32, carb: 0, fat: 4.5, default_qty: 150 },
-  { name: "Fígado bovino acebolado", unit: "g", kcal: 150, prot: 25, carb: 4, fat: 4, default_qty: 150 },
-  { name: "Moela de frango cozida", unit: "g", kcal: 130, prot: 22, carb: 0, fat: 4.5, default_qty: 150 },
-  { name: "Carré (lombo suíno) grelhado", unit: "g", kcal: 164, prot: 27, carb: 0, fat: 6, default_qty: 150 },
-  { name: "Queijo muçarela (fatia)", unit: "un", portion_g: 20, kcal: 300, prot: 22, carb: 1, fat: 23, default_qty: 1 },
-  { name: "Leite desnatado líquido", unit: "ml", kcal: 35, prot: 3.4, carb: 5, fat: 0.1, default_qty: 200 },
-  { name: "Leite em pó desnatado (colher)", unit: "un", portion_g: 10, kcal: 360, prot: 36, carb: 52, fat: 0.5, default_qty: 3 },
-  { name: "Whey Protein (scoop)", unit: "un", portion_g: 30, kcal: 400, prot: 80, carb: 7, fat: 3, default_qty: 1 },
-  { name: "Melancia", unit: "g", kcal: 30, prot: 0.6, carb: 7.5, fat: 0.2, default_qty: 250 },
-  { name: "Pão francês", unit: "un", portion_g: 50, kcal: 300, prot: 9, carb: 58, fat: 3, default_qty: 1 },
-  { name: "Arroz branco cozido", unit: "g", kcal: 128, prot: 2.5, carb: 28, fat: 0.2, default_qty: 100 },
-  { name: "Feijão carioca cozido", unit: "g", kcal: 76, prot: 4.8, carb: 13.6, fat: 0.5, default_qty: 100 },
-  { name: "Chocolate meio amargo", unit: "g", kcal: 530, prot: 5, carb: 60, fat: 30, default_qty: 20 },
-  { name: "Doce de leite", unit: "g", kcal: 310, prot: 6, carb: 55, fat: 7, default_qty: 20 },
-  { name: "Brócolis cozido", unit: "g", kcal: 35, prot: 2.4, carb: 7, fat: 0.4, default_qty: 100 },
-  { name: "Abobrinha cozida", unit: "g", kcal: 15, prot: 1, carb: 3, fat: 0.1, default_qty: 100 },
-  { name: "Chuchu cozido", unit: "g", kcal: 17, prot: 0.6, carb: 4, fat: 0.1, default_qty: 100 },
-  { name: "Banana", unit: "un", portion_g: 100, kcal: 89, prot: 1.1, carb: 23, fat: 0.3, default_qty: 1 },
-  { name: "Café preto (sem açúcar)", unit: "ml", kcal: 2, prot: 0.1, carb: 0, fat: 0, default_qty: 100 },
-  { name: "Batata doce cozida", unit: "g", kcal: 77, prot: 1.3, carb: 18, fat: 0.1, default_qty: 150 },
-  { name: "Tapioca (goma hidratada)", unit: "g", kcal: 68, prot: 0, carb: 17, fat: 0, default_qty: 50 },
-];
+const NT_FOODS = []; // Será populado pelo DB + custom foods
+
+function ntGetAllFoods() {
+  const custom = JSON.parse(localStorage.getItem('ntCustomFoods') || '[]');
+  return [...NT_FOODS_DB, ...custom.map(f => ({...f, cat: 'custom'}))];
+}
+
+// === CUSTOM FOODS ===
+function ntGetCustomFoods() { return JSON.parse(localStorage.getItem('ntCustomFoods') || '[]'); }
+function ntSaveCustomFood(food) {
+  const foods = ntGetCustomFoods();
+  foods.push(food);
+  localStorage.setItem('ntCustomFoods', JSON.stringify(foods));
+  ntPopulateSelect();
+}
+function ntRemoveCustomFood(idx) {
+  const foods = ntGetCustomFoods();
+  foods.splice(idx, 1);
+  localStorage.setItem('ntCustomFoods', JSON.stringify(foods));
+  ntPopulateSelect();
+}
+
+function ntShowAddCustom() {
+  const el = document.getElementById('nt-customForm');
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+  } else {
+    el.style.display = 'none';
+  }
+}
+
+function ntSaveCustomForm() {
+  const name = document.getElementById('nc-name').value.trim();
+  const kcal = parseFloat(document.getElementById('nc-kcal').value);
+  const prot = parseFloat(document.getElementById('nc-prot').value) || 0;
+  const carb = parseFloat(document.getElementById('nc-carb').value) || 0;
+  const fat = parseFloat(document.getElementById('nc-fat').value) || 0;
+  const unitType = document.getElementById('nc-unit').value;
+  const portionG = parseFloat(document.getElementById('nc-portion').value) || 100;
+  if (!name || !kcal) return;
+  const food = { name, unit: unitType, kcal, prot, carb, fat, default_qty: unitType === 'un' ? 1 : portionG };
+  if (unitType === 'un') food.portion_g = portionG;
+  ntSaveCustomFood(food);
+  document.getElementById('nc-name').value = '';
+  document.getElementById('nc-kcal').value = '';
+  document.getElementById('nc-prot').value = '';
+  document.getElementById('nc-carb').value = '';
+  document.getElementById('nc-fat').value = '';
+  ntShowAddCustom();
+}
+
+// === REFEIÇÕES SALVAS (COMBOS) ===
+function ntGetCombos() { return JSON.parse(localStorage.getItem('ntCombos') || '[]'); }
+function ntSaveCombos(c) { localStorage.setItem('ntCombos', JSON.stringify(c)); }
+
+function ntSaveCurrentAsCombo() {
+  const log = ntGetLog();
+  const mealItems = log.items.filter(i => i.meal === ntMeal);
+  if (mealItems.length === 0) return alert('Adicione alimentos primeiro');
+  const name = prompt('Nome do combo (ex: Meu café padrão):');
+  if (!name) return;
+  const combos = ntGetCombos();
+  combos.push({ name, meal: ntMeal, items: mealItems });
+  ntSaveCombos(combos);
+  ntRenderCombos();
+}
+
+function ntLoadCombo(idx) {
+  const combos = ntGetCombos();
+  const combo = combos[idx];
+  const log = ntGetLog();
+  combo.items.forEach(item => log.items.push({...item, meal: ntMeal}));
+  ntSaveLog(log);
+  ntRender();
+}
+
+function ntDeleteCombo(idx) {
+  if (!confirm('Remover este combo?')) return;
+  const combos = ntGetCombos();
+  combos.splice(idx, 1);
+  ntSaveCombos(combos);
+  ntRenderCombos();
+}
+
+function ntRenderCombos() {
+  const el = document.getElementById('nt-combos');
+  if (!el) return;
+  const combos = ntGetCombos();
+  if (combos.length === 0) { el.innerHTML = ''; return; }
+  el.innerHTML = combos.map((c, i) => {
+    const totalKcal = c.items.reduce((s, it) => s + it.kcal, 0);
+    return `<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border,#2a2a2a)">
+      <button onclick="ntLoadCombo(${i})" style="flex:1;text-align:left;background:none;border:none;color:var(--text,#f0f0f0);cursor:pointer;font-size:.75rem;padding:4px 0"><b>${c.name}</b> <span style="color:var(--text-3,#666)">(${Math.round(totalKcal)} kcal)</span></button>
+      <button onclick="ntDeleteCombo(${i})" style="background:none;border:none;color:var(--red,#ef4444);cursor:pointer;font-size:.8rem">×</button>
+    </div>`;
+  }).join('');
+}
+
+// === FILTRO POR CATEGORIA ===
+let ntCurrentCat = 'all';
+
+function ntFilterCat(cat) {
+  ntCurrentCat = cat;
+  ntPopulateSelect();
+  document.querySelectorAll('#nt-catBtns button').forEach(b => b.style.opacity = '0.5');
+  event.target.style.opacity = '1';
+}
+
+function ntPopulateSelect() {
+  const sel = document.getElementById('nt-foodSelect');
+  if (!sel) return;
+  sel.innerHTML = '';
+  const foods = ntGetAllFoods();
+  const filtered = ntCurrentCat === 'all' ? foods : foods.filter(f => f.cat === ntCurrentCat);
+  filtered.forEach((f, i) => {
+    const o = document.createElement('option');
+    o.textContent = f.name;
+    o.dataset.idx = foods.indexOf(f);
+    sel.appendChild(o);
+  });
+  ntUpdateUnit();
+}
 
 let ntMeal = 'cafe';
 const NT_MEAL_ICONS = { cafe: '☕', almoco: '🍛', lanche: '🍉', janta: '🍽️' };
@@ -202,7 +298,12 @@ function ntSetMeal(meal, btn) {
 }
 
 function ntUpdateUnit() {
-  const f = NT_FOODS[document.getElementById('nt-foodSelect').selectedIndex];
+  const sel = document.getElementById('nt-foodSelect');
+  if (!sel || sel.options.length === 0) return;
+  const foods = ntGetAllFoods();
+  const idx = parseInt(sel.options[sel.selectedIndex].dataset.idx) || 0;
+  const f = foods[idx];
+  if (!f) return;
   const u = document.getElementById('nt-unitLabel');
   const q = document.getElementById('nt-qty');
   if (f.unit === 'un') { u.textContent = 'un.'; q.value = f.default_qty; q.step = '1'; }
@@ -213,8 +314,11 @@ function ntUpdateUnit() {
 function ntAddFood() {
   const sel = document.getElementById('nt-foodSelect');
   const qty = parseFloat(document.getElementById('nt-qty').value);
-  if (!qty || qty <= 0) return;
-  const f = NT_FOODS[sel.selectedIndex];
+  if (!qty || qty <= 0 || sel.options.length === 0) return;
+  const foods = ntGetAllFoods();
+  const idx = parseInt(sel.options[sel.selectedIndex].dataset.idx) || 0;
+  const f = foods[idx];
+  if (!f) return;
   let grams, display;
   if (f.unit === 'un') { grams = qty * f.portion_g; display = qty + ' un (' + grams + 'g)'; }
   else { grams = qty; display = qty + (f.unit === 'ml' ? 'ml' : 'g'); }
@@ -366,9 +470,9 @@ function ntRenderWeight() {
   if (profile) ntApplyProfile(profile);
   ntShowProfile();
 
-  // Popular select
-  NT_FOODS.forEach(f => { const o = document.createElement('option'); o.textContent = f.name; sel.appendChild(o); });
-  ntUpdateUnit();
+  // Popular select com banco expandido
+  ntPopulateSelect();
+  ntRenderCombos();
   ntRenderWeight();
   ntRender();
 })();

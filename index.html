@@ -138,12 +138,50 @@
                 <button class="diet-btn" onclick="ntSetMeal('lanche',this)" style="font-size:.65rem;padding:4px 8px">🍉 Lanche</button>
                 <button class="diet-btn" onclick="ntSetMeal('janta',this)" style="font-size:.65rem;padding:4px 8px">🍽️ Janta</button>
             </div>
-            <div style="display:flex;gap:6px;align-items:center">
-                <select id="nt-foodSelect" onchange="ntUpdateUnit()" style="flex:2;padding:8px;border-radius:6px;border:1px solid #333;background:#1a1a1a;color:#fff;font-size:.8rem"></select>
-                <input type="number" id="nt-qty" value="1" style="width:55px;padding:8px;border-radius:6px;border:1px solid #333;background:#1a1a1a;color:#fff;font-size:.8rem;text-align:center">
-                <span id="nt-unitLabel" style="font-size:.7rem;color:#888;min-width:20px">g</span>
-                <button onclick="ntAddFood()" style="padding:8px 14px;border-radius:6px;border:none;background:#4CAF50;color:#fff;font-weight:700;font-size:1rem;cursor:pointer">+</button>
+            <!-- Filtro categorias -->
+            <div id="nt-catBtns" style="display:flex;gap:3px;margin-bottom:8px;flex-wrap:wrap;overflow-x:auto">
+                <button onclick="ntFilterCat('all')" style="opacity:1;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">Todos</button>
+                <button onclick="ntFilterCat('prot')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🥩</button>
+                <button onclick="ntFilterCat('lact')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🧀</button>
+                <button onclick="ntFilterCat('carb')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🍚</button>
+                <button onclick="ntFilterCat('fruta')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🍎</button>
+                <button onclick="ntFilterCat('veg')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🥦</button>
+                <button onclick="ntFilterCat('doce')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🍫</button>
+                <button onclick="ntFilterCat('fast')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🍕</button>
+                <button onclick="ntFilterCat('gord')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🥜</button>
+                <button onclick="ntFilterCat('beb')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">☕</button>
+                <button onclick="ntFilterCat('custom')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">⭐</button>
             </div>
+            <div style="display:flex;gap:6px;align-items:center">
+                <select id="nt-foodSelect" onchange="ntUpdateUnit()" style="flex:2;padding:8px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text,#f0f0f0);font-size:.8rem"></select>
+                <input type="number" id="nt-qty" value="1" style="width:55px;padding:8px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text,#f0f0f0);font-size:.8rem;text-align:center">
+                <span id="nt-unitLabel" style="font-size:.7rem;color:var(--text-3,#666);min-width:20px">g</span>
+                <button onclick="ntAddFood()" style="padding:8px 14px;border-radius:6px;border:none;background:var(--green,#22c55e);color:#fff;font-weight:700;font-size:1rem;cursor:pointer">+</button>
+            </div>
+            <!-- Cadastro custom -->
+            <div style="margin-top:8px;display:flex;gap:6px">
+                <button onclick="ntShowAddCustom()" style="flex:1;font-size:.65rem;padding:5px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">➕ Cadastrar Alimento</button>
+                <button onclick="ntSaveCurrentAsCombo()" style="flex:1;font-size:.65rem;padding:5px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">💾 Salvar Combo</button>
+            </div>
+            <div id="nt-customForm" style="display:none;margin-top:8px;padding:10px;background:var(--surface-2,#1c1c1c);border-radius:8px;border:1px solid var(--border,#2a2a2a)">
+                <div style="font-size:.7rem;font-weight:700;margin-bottom:6px;color:var(--text,#f0f0f0)">Cadastrar Alimento (valores por 100g)</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:.7rem">
+                    <input id="nc-name" placeholder="Nome" style="grid-column:span 2;padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
+                    <input id="nc-kcal" type="number" placeholder="Kcal/100g" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
+                    <input id="nc-prot" type="number" placeholder="Prot (g)" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
+                    <input id="nc-carb" type="number" placeholder="Carb (g)" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
+                    <input id="nc-fat" type="number" placeholder="Gord (g)" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
+                    <select id="nc-unit" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem"><option value="g">Gramas</option><option value="un">Unidade</option><option value="ml">ml</option></select>
+                    <input id="nc-portion" type="number" placeholder="Peso 1un (g)" value="100" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
+                </div>
+                <button onclick="ntSaveCustomForm()" style="width:100%;margin-top:6px;padding:6px;background:var(--accent,#6366f1);color:#fff;border:none;border-radius:4px;font-size:.7rem;font-weight:600;cursor:pointer">Salvar</button>
+            </div>
+        </div>
+
+        <!-- Combos salvos -->
+        <div id="nt-combos-section" class="info-card" style="margin-bottom:12px">
+            <h3 style="font-size:.8rem;margin-bottom:6px">⚡ Refeições Salvas</h3>
+            <div id="nt-combos"><p style="font-size:.65rem;color:var(--text-3,#666)">Nenhum combo salvo. Adicione alimentos e clique "💾 Salvar Combo"</p></div>
         </div>
 
         <!-- Log do dia -->
@@ -427,6 +465,7 @@
     <script src="js/ui.js"></script>
     <script src="js/workout.js"></script>
     <script src="js/alarms.js"></script>
+    <script src="js/foods-db.js"></script>
     <script src="js/nutrition.js"></script>
     <script src="js/app.js"></script>
 </body>
