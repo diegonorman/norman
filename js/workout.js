@@ -241,23 +241,13 @@ function markDayCompleted(day) {
     const todayStr = today.toDateString();
     const monthKey = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}`;
     const dayNumber = today.getDate();
-    const weekday = today.getDay(); // 1=Seg...5=Sex
 
-    // Só marca se algum exercício desse dia foi checkado hoje
-    const workout = workoutData[day];
-    if (!workout) return;
-    let checkedToday = false;
-    workout.exercises.forEach((_, i) => {
-        const id = `${day}-${i}`;
-        if (completedExercises[id] && completedExercises[id] === true) checkedToday = true;
-    });
-    // Verifica se o último check foi hoje (usa timestamp salvo)
+    // Só marca se o último check nesse treino foi hoje
     const lastCheck = localStorage.getItem('lastCheckDate_' + day);
     if (lastCheck !== todayStr) return;
 
-    if (weekday >= 1 && weekday <= 5) {
-        weeklyProgress[weekday] = todayStr;
-    }
+    // day 1=SEG, 2=TER, 3=QUA, 4=QUI, 5=SEX - marca o box correspondente ao treino
+    weeklyProgress[day] = todayStr;
     localStorage.setItem('weeklyProgress', JSON.stringify(weeklyProgress));
     if (!monthlyHistory[monthKey]) monthlyHistory[monthKey] = [];
     if (!monthlyHistory[monthKey].includes(dayNumber)) {
