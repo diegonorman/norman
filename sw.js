@@ -1,4 +1,4 @@
-const CACHE_NAME = 'treino-20260520-1424';
+const CACHE_NAME = 'treino-20260520-1427';
 const urlsToCache = [
   './',
   './index.html',
