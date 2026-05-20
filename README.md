@@ -1,124 +1,86 @@
-# 💪 App de Treino - Diego Norman
+# 💪 Norman Training
 
-Sistema responsivo para mobile que lê treinos diretamente do Excel para acompanhar seus treinos de academia.
+App PWA completo para treino, nutrição e suplementação. Mobile-first, dark mode, funciona offline.
 
-## 🚀 Funcionalidades
+**Live:** https://diegonorman.github.io/norman/
 
-- ✅ **Lê dados do Excel**: Carrega treinos do arquivo `treinor.xlsx`
-- ✅ **Interface Mobile-First**: Otimizado para smartphones
-- ✅ **5 Treinos Diferentes**: Carregados automaticamente do Excel
-- ✅ **Progresso Visual**: Barra de progresso e contador com animações
-- ✅ **Persistência**: Salva seu progresso no navegador
-- ✅ **Links para Vídeos**: Acesso rápido aos vídeos explicativos
-- ✅ **Design Moderno**: Interface com glassmorphism e animações
-- ✅ **Efeitos Especiais**: Confete ao completar exercícios! 🎊
+## Funcionalidades
 
-## 📊 Como Funciona
+### 🏋️ Treino
+- Exercícios carregados do Excel (5 dias/semana)
+- Progresso visual com check por exercício
+- Timer de descanso com vibração ao finalizar
+- Vídeos explicativos por exercício
+- Histórico semanal e mensal de treinos
 
-O app lê os dados do arquivo **`treinor.xlsx`** e converte automaticamente para JSON. 
-A estrutura do Excel deve ter as colunas:
-- **DIA**: "DIA 1", "DIA 2", etc.
-- **EXERCÍCIO**: Nome do exercício
-- **SÉRIES**: Número de séries
-- **REPETIÇÕES**: Número de repetições
-- **PAUSA**: Tempo de descanso
-- **OBSERVAÇÕES / DICAS**: Detalhes do exercício
-- **LINK**: URL do vídeo explicativo
+### 🥗 Dieta - Tracker de Calorias
+- **Calculadora TDEE** com perfil configurável (peso, altura, idade, atividade)
+- **Boost metabólico** para protocolos hormonais/termogênicos
+- **Meta calórica fixa** ou calculada automaticamente
+- **TDEE adaptativo** real baseado em dados de consumo + variação de peso (7+ dias)
+- **100+ alimentos** pré-cadastrados em categorias (proteínas, carbs, frutas, doces, fast food...)
+- **Cadastro custom** de alimentos com macros da tabela nutricional
+- **Refeições salvas** (combos com 1 clique)
+- **Filtro por categoria** (emoji buttons)
+- Macros em tempo real (proteína, carbo, gordura) com barras de progresso
+- Registro de peso com comparação automática
+- **Gráfico de evolução** de peso (canvas, últimos 30 registros)
+- **Streak** de dias consecutivos na dieta
+- Dias da semana registrados (visual)
+- Déficit diário e semanal com projeção de perda em kg
+- Plano alimentar fixo com substituições equivalentes
 
-## 🔧 Como Usar
+### 💊 Suplementos
+- Protocolo completo com horários
+- Dosagens e instruções de aplicação
 
-### 1. Primeira Configuração
+### ⏰ Horários
+- Alarmes de referência configuráveis
+- Rotina de aeróbicos, sono e higiene
+
+## Tech Stack
+
+- HTML/CSS/JS puro (zero dependências)
+- PWA com Service Worker (funciona offline)
+- localStorage para persistência
+- Canvas API para gráficos
+- GitHub Pages para deploy
+
+## Como Usar
+
 ```bash
-# Converter Excel para JSON
+# Clonar
+git clone https://github.com/diegonorman/norman.git
+
+# Atualizar treinos do Excel
 python3 convert_excel.py
-
-# Ou usar o script automático
 ./update_treinos.sh
-```
 
-### 2. Executar o App
-```bash
-# Iniciar servidor local
+# Testar local
 python3 -m http.server 8000
-
-# Abrir no navegador
-# http://localhost:8000
 ```
 
-### 3. Atualizar Treinos
-Sempre que modificar o `treinor.xlsx`:
-```bash
-./update_treinos.sh
-```
+## Instalar no Celular
 
-## 📱 GitHub Pages
+1. Abra https://diegonorman.github.io/norman/ no Safari/Chrome
+2. "Adicionar à Tela de Início"
+3. Pronto, funciona como app nativo
 
-Para usar no GitHub Pages:
-
-1. **Fazer upload dos arquivos**:
-   ```bash
-   git add .
-   git commit -m "App de treino com dados do Excel"
-   git push origin main
-   ```
-
-2. **Ativar GitHub Pages**:
-   - Vá em Settings > Pages
-   - Source: Deploy from a branch
-   - Branch: main
-   - Folder: / (root)
-
-3. **Acessar**: `https://seu-usuario.github.io/nome-do-repo`
-
-## 📱 Instalar no iOS
-
-1. Abra o app no Safari
-2. Toque no botão de compartilhar
-3. Selecione "Adicionar à Tela de Início"
-4. Agora você tem o app instalado como PWA! 📱
-
-## 🎨 Recursos Visuais
-
-- **Glassmorphism**: Efeito de vidro moderno
-- **Gradientes animados**: Background que muda de cor
-- **Confete**: Animação ao completar exercícios
-- **Efeitos de ondas**: Feedback visual nos botões
-- **Ícones automáticos**: Cada exercício ganha emoji baseado no tipo
-- **Transições suaves**: Animações em todas as interações
-
-## 🔄 Fluxo de Trabalho
-
-1. **Editar treinos**: Modifique `treinor.xlsx`
-2. **Converter**: Execute `./update_treinos.sh`
-3. **Testar**: Recarregue o app no navegador
-4. **Publicar**: Faça push para GitHub
-5. **Usar**: Acesse via GitHub Pages no celular
-
-## 📁 Estrutura de Arquivos
+## Estrutura
 
 ```
-treino-app/
 ├── index.html          # Interface principal
-├── style.css           # Estilos modernos
-├── script.js           # Lógica do app
-├── treinor.xlsx        # 📊 Seus dados de treino
-├── workout_data.json   # Dados convertidos
-├── convert_excel.py    # Conversor Excel → JSON
-├── update_treinos.sh   # Script de atualização
+├── style.css           # Design system dark mode
+├── workout-data.js     # Dados de treino (gerado do Excel)
+├── js/
+│   ├── app.js          # Navegação e init
+│   ├── ui.js           # Modais e efeitos
+│   ├── workout.js      # Lógica de treino e timer
+│   ├── alarms.js       # Sistema de alarmes
+│   ├── foods-db.js     # Banco de 100+ alimentos
+│   └── nutrition.js    # Tracker de calorias completo
+├── sw.js               # Service Worker (cache offline)
 ├── manifest.json       # PWA config
-└── sw.js              # Service Worker
+├── treinor.xlsx        # Dados de treino (fonte)
+└── convert_excel.py    # Conversor Excel → JSON
 ```
-
-## 🎯 Vantagens
-
-- **📊 Excel como banco de dados**: Fácil de editar
-- **🌐 Funciona offline**: PWA com cache
-- **📱 App nativo**: Instala no iOS/Android
-- **🔄 Fácil atualização**: Script automatizado
-- **🎨 Visual moderno**: Interface profissional
-- **⚡ Rápido**: Carregamento instantâneo
-
----
-
-**Desenvolvido para Diego Norman Morais Barros do Nascimento**
-*Sistema que lê Excel e vira app de treino profissional* 💪✨
