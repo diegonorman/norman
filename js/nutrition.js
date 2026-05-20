@@ -89,7 +89,14 @@ function ntShowProfile() {
         <div><div style="color:var(--text-3,#666)">PERDA/SEM</div><div style="font-weight:700;font-size:.9rem;color:var(--orange,#f59e0b)">~${projSemanal}kg</div></div>
       </div>
       <div style="font-size:.6rem;color:var(--text-3,#666);margin-top:6px;text-align:center">${profile.peso}kg · ${profile.altura}cm · ${profile.idade}a · Déficit: ${defLabels[profile.deficit]}${profile.boost ? ' · 🔥 Boost: +' + profile.boost + ' kcal' : ''}</div>
+      <div style="display:flex;gap:4px;margin-top:8px;align-items:center;border-top:1px solid var(--border,#2a2a2a);padding-top:8px">
+        <span style="font-size:.65rem;color:var(--text-3,#666)">⚖️</span>
+        <input type="number" id="nt-weight" placeholder="kg" step="0.1" style="flex:1;padding:5px 8px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text,#f0f0f0);font-size:.8rem">
+        <button onclick="ntSaveWeight()" style="padding:5px 10px;border-radius:6px;border:none;background:var(--blue,#3b82f6);color:#fff;font-size:.7rem;font-weight:600;cursor:pointer">Salvar</button>
+      </div>
+      <div id="nt-weightInfo" style="font-size:.65rem;color:var(--text-3,#666);margin-top:4px;text-align:center"></div>
     `;
+    ntRenderWeight();
   } else {
     // Mostrar formulário
     const p = profile || { peso: 83, altura: 169, idade: 32, sexo: 'M', atividade: 'intenso', deficit: 'agressivo' };
