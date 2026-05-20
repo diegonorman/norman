@@ -238,7 +238,11 @@ function markDayCompleted(day) {
     const today = new Date();
     const monthKey = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}`;
     const dayNumber = today.getDate();
-    weeklyProgress[day] = today.toDateString();
+    // Mapeia dia da semana real: 0=Dom, 1=Seg(1), 2=Ter(2), 3=Qua(3), 4=Qui(4), 5=Sex(5), 6=Sab
+    const weekday = today.getDay(); // 1-5 = Seg-Sex
+    if (weekday >= 1 && weekday <= 5) {
+        weeklyProgress[weekday] = today.toDateString();
+    }
     localStorage.setItem('weeklyProgress', JSON.stringify(weeklyProgress));
     if (!monthlyHistory[monthKey]) monthlyHistory[monthKey] = [];
     if (!monthlyHistory[monthKey].includes(dayNumber)) {
