@@ -54,7 +54,7 @@ function ntApplyProfile(profile) {
   const deficits = { leve: 300, moderado: 500, agressivo: 750, extremo: 1000 };
   const deficit = deficits[profile.deficit] || 500;
   NT_BURN = tdee;
-  NT_GOAL = tdee - deficit;
+  NT_GOAL = profile.metaFixa > 0 ? profile.metaFixa : tdee - deficit;
   // Macros: 2.2g/kg prot, restante divide carb/fat
   const prot = Math.round(profile.peso * 2.2);
   const protKcal = prot * 4;
@@ -111,6 +111,7 @@ function ntShowProfile() {
       <div style="margin-top:8px"><label style="color:var(--text-3,#666);font-size:.6rem">NÍVEL DE ATIVIDADE</label><select id="np-atividade" style="width:100%;padding:6px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text,#f0f0f0);font-size:.8rem;margin-top:4px"><option value="sedentario" ${p.atividade==='sedentario'?'selected':''}>Sedentário</option><option value="leve" ${p.atividade==='leve'?'selected':''}>Leve (1-3x/sem)</option><option value="moderado" ${p.atividade==='moderado'?'selected':''}>Moderado (3-5x/sem)</option><option value="intenso" ${p.atividade==='intenso'?'selected':''}>Intenso (6-7x/sem)</option><option value="muito_intenso" ${p.atividade==='muito_intenso'?'selected':''}>Muito Intenso (2x/dia)</option></select></div>
       <div style="margin-top:8px"><label style="color:var(--text-3,#666);font-size:.6rem">TIPO DE DÉFICIT</label><select id="np-deficit" style="width:100%;padding:6px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text,#f0f0f0);font-size:.8rem;margin-top:4px"><option value="leve" ${p.deficit==='leve'?'selected':''}>Leve (-300 kcal) ~0.3kg/sem</option><option value="moderado" ${p.deficit==='moderado'?'selected':''}>Moderado (-500 kcal) ~0.5kg/sem</option><option value="agressivo" ${p.deficit==='agressivo'?'selected':''}>Agressivo (-750 kcal) ~0.7kg/sem</option><option value="extremo" ${p.deficit==='extremo'?'selected':''}>Extremo (-1000 kcal) ~1kg/sem</option></select></div>
       <div style="margin-top:8px"><label style="color:var(--text-3,#666);font-size:.6rem">🔥 BOOST METABÓLICO (clembu/hormônios/mounjaro)</label><select id="np-boost" style="width:100%;padding:6px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text,#f0f0f0);font-size:.8rem;margin-top:4px"><option value="0" ${(p.boost||0)===0?'selected':''}>Nenhum (+0 kcal)</option><option value="200" ${p.boost===200?'selected':''}>Leve (+200 kcal) - só termogênico</option><option value="350" ${p.boost===350?'selected':''}>Moderado (+350 kcal) - clembu + hormônios</option><option value="500" ${p.boost===500?'selected':''}>Alto (+500 kcal) - clembu + hormônios + mounjaro</option></select></div>
+      <div style="margin-top:8px"><label style="color:var(--text-3,#666);font-size:.6rem">🎯 META CALÓRICA (deixe 0 para calcular automático)</label><input type="number" id="np-metaFixa" value="${p.metaFixa||0}" placeholder="0 = automático" style="width:100%;padding:6px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text,#f0f0f0);font-size:.8rem;margin-top:4px"></div>
       <button onclick="ntSaveProfileForm()" style="width:100%;margin-top:10px;padding:8px;background:var(--accent,#6366f1);color:#fff;border:none;border-radius:6px;font-weight:700;font-size:.8rem;cursor:pointer">💾 Salvar e Calcular</button>
     `;
     el.dataset.editing = '';
@@ -131,7 +132,8 @@ function ntSaveProfileForm() {
     sexo: document.getElementById('np-sexo').value,
     atividade: document.getElementById('np-atividade').value,
     deficit: document.getElementById('np-deficit').value,
-    boost: parseInt(document.getElementById('np-boost').value) || 0
+    boost: parseInt(document.getElementById('np-boost').value) || 0,
+    metaFixa: parseInt(document.getElementById('np-metaFixa').value) || 0
   };
   if (!profile.peso || !profile.altura || !profile.idade) return;
   ntSaveProfile(profile);
