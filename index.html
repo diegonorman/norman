@@ -86,271 +86,123 @@
                 </div>
             </div>
 
-            <!-- Seção de Nutrição ATUALIZADA -->
+<!-- Seção de Nutrição - TRACKER 1700 KCAL -->
 <div id="nutrition-section" class="section">
     <div class="nutrition-content">
-        <div class="info-card" style="border-left: 4px solid #1e3c72;">
-            <h3>📊 Dados Bioimpedância (25/03/2026)</h3>
-            <ul>
-                <li><strong>Peso atual:</strong> 86.5kg | <strong>Meta:</strong> ~80kg</li>
-                <li><strong>Gordura atual:</strong> 19.5% (16.9kg) | <strong>Meta:</strong> 13%</li>
-                <li><strong>Massa muscular:</strong> 40.9kg (manter)</li>
-                <li><strong>Perder:</strong> ~6.9kg de gordura pura</li>
-                <li><strong>Gordura visceral:</strong> 7 → meta: &lt;5</li>
-                <li><strong>Cintura-quadril:</strong> 0.95 → meta: &lt;0.90</li>
-                <li><strong>Score InBody:</strong> 93/100</li>
-            </ul>
+
+        <!-- Barra de progresso calorias -->
+        <div style="width:100%;height:8px;background:#2a2a2a;border-radius:4px;margin:8px 0;overflow:hidden">
+            <div id="nt-mainBar" style="height:100%;background:linear-gradient(90deg,#4CAF50,#FF9800,#f44336);border-radius:4px;transition:width .3s;width:0%"></div>
         </div>
 
-        <div class="info-card">
-            <h3>🧠 Regras Gerais</h3>
-            <ul>
-                <li><strong>Meta calórica:</strong> ~2.700 kcal/dia (déficit médio-agressivo)</li>
-                <li><strong>TDEE estimado:</strong> ~3.400 kcal (com protocolo + clembu)</li>
-                <li><strong>Déficit:</strong> -700 kcal/dia</li>
-                <li><strong>Proteína:</strong> ~180g/dia (2.1g/kg — preservar músculo)</li>
-                <li><strong>Refeição livre:</strong> 1 REFEIÇÃO livre por semana (não o dia inteiro) + metformina antes</li>
-                <li><strong>Snack diário:</strong> 1 doce (~150 kcal) — já contabilizado</li>
-                <li><strong>Hidratação:</strong> 5-6L água/dia</li>
-                <li><strong>Permitidos:</strong> Adoçantes zero, refrigerantes zero, chás zero, café (até 16h)</li>
-                <li><strong>Gordura preparo:</strong> Apenas spray ou limpar panela</li>
-                <li><strong>Sal:</strong> 8g fragmentados ao longo do dia</li>
-            </ul>
+        <!-- Cards resumo -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px">
+            <div class="info-card" style="padding:10px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">CONSUMIDO</small><div id="nt-consumed" style="font-size:1.2rem;font-weight:700;color:#FF9800">0</div></div>
+            <div class="info-card" style="padding:10px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">RESTANTE</small><div id="nt-remaining" style="font-size:1.2rem;font-weight:700;color:#4CAF50">1700</div></div>
+            <div class="info-card" style="padding:10px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">META</small><div id="nt-goal" style="font-size:1.2rem;font-weight:700;color:#448aff">1700</div></div>
+            <div class="info-card" style="padding:10px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">DÉFICIT</small><div id="nt-deficit" style="font-size:1.2rem;font-weight:700;color:#4CAF50">2683</div></div>
         </div>
 
-        <div class="info-card" style="border-left: 4px solid #4CAF50;">
-            <h3>📊 Distribuição Semanal</h3>
-            <ul>
-                <li><strong>6 dias dieta:</strong> ~2.700 kcal</li>
-                <li><strong>1 refeição livre:</strong> 1x/semana (resto do dia segue dieta + metformina antes)</li>
-                <li><strong>Média semanal:</strong> ~2.814 kcal/dia</li>
-                <li><strong>Perda estimada:</strong> ~0.7-1kg/semana</li>
-                <li><strong>Tempo pra 13%:</strong> ~8-10 semanas</li>
-            </ul>
+        <!-- Macros -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px">
+            <div class="info-card" style="padding:8px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">PROTEÍNA</small><div id="nt-prot" style="font-size:.9rem;font-weight:600">0/185g</div><div style="height:4px;background:#2a2a2a;border-radius:2px;margin-top:4px;overflow:hidden"><div id="nt-protBar" style="height:100%;background:#448aff;width:0%;border-radius:2px;transition:width .3s"></div></div></div>
+            <div class="info-card" style="padding:8px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">CARBOIDRATO</small><div id="nt-carb" style="font-size:.9rem;font-weight:600">0/160g</div><div style="height:4px;background:#2a2a2a;border-radius:2px;margin-top:4px;overflow:hidden"><div id="nt-carbBar" style="height:100%;background:#FF9800;width:0%;border-radius:2px;transition:width .3s"></div></div></div>
+            <div class="info-card" style="padding:8px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">GORDURA</small><div id="nt-fat" style="font-size:.9rem;font-weight:600">0/45g</div><div style="height:4px;background:#2a2a2a;border-radius:2px;margin-top:4px;overflow:hidden"><div id="nt-fatBar" style="height:100%;background:#f44336;width:0%;border-radius:2px;transition:width .3s"></div></div></div>
         </div>
 
-        <div class="diet-toggle">
-            <button class="diet-btn active" onclick="showDiet('alto')">🔥 1 DIA ALTO CARBO</button>
-            <button class="diet-btn" onclick="showDiet('baixo')">⚡ 2 DIAS BAIXO CARBO</button>
-        </div>
-
-        <!-- DIETA ALTO CARBO (~2.700 kcal) -->
-        <div id="diet-alto" class="diet-plan active">
-            <div class="meal-card">
-                <h3>🍳 1ª Refeição - Café da Manhã (~450 kcal)</h3>
-                <ul>
-                    <li>Ovo (03 inteiros)</li>
-                    <li>Pão integral (02 fatias) ou Tapioca 35g</li>
-                    <li>Queijo mussarela (02 fatias)</li>
-                    <li>Chia (10g)</li>
-                    <li>1 colher de vinagre de maçã + 200ml de água</li>
-                </ul>
-            </div>
-
-            <div class="meal-card">
-                <h3>🍌 2ª Refeição - Lanche da Manhã (~200 kcal)</h3>
-                <p><strong>Escolher uma fruta:</strong></p>
-                <ul>
-                    <li>Banana, Laranja, Maçã, Pera (01)</li>
-                    <li>Mamão (100g) | Melão, Morango (150g)</li>
-                </ul>
-            </div>
-
-            <div class="meal-card">
-                <h3>🍽️ 3ª Refeição - Almoço (~700 kcal)</h3>
-                <p><strong>Proteína (escolher 1):</strong></p>
-                <ul>
-                    <li>Frango sem pele (250g)</li>
-                    <li>Filé de peixe (300g)</li>
-                </ul>
-                <p><strong>Carboidrato (escolher 1):</strong></p>
-                <ul>
-                    <li>Arroz/Mandioca/Cuscuz (100g)</li>
-                    <li>Batata Inglesa/Doce (200g ou 150g assada)</li>
-                </ul>
-                <ul>
-                    <li>Legumes (200g) + Salada verde à vontade</li>
-                    <li>Abacaxi (200g)</li>
-                </ul>
-                <p><em>*Sem feijão = pode adicionar 50g de outro carbo.</em></p>
-                <p><em>*Pode usar fígado bovino e moela de frango.</em></p>
-            </div>
-
-            <div class="meal-card">
-                <h3>🥤 4ª Refeição - Lanche da Tarde (~400 kcal)</h3>
-                <div class="meal-options">
-                    <div class="meal-option">
-                        <h4>Opção 1 - Mingau</h4>
-                        <ul>
-                            <li>Whey (01 dose) + Aveia (10g)</li>
-                            <li>1 fruta + Iogurte zero (100g)</li>
-                        </ul>
-                    </div>
-                    <div class="meal-option">
-                        <h4>Opção 2 - Bolinho</h4>
-                        <ul>
-                            <li>Whey (01 dose) + Claras (02) + Aveia (10g)</li>
-                            <li>1 fruta + Iogurte zero (100g)</li>
-                        </ul>
-                    </div>
-                    <div class="meal-option">
-                        <h4>Opção 3 - Sólida</h4>
-                        <ul>
-                            <li>Frango (80g) ou Peixe (100g)</li>
-                            <li>Batata (200g) + Salada verde</li>
-                        </ul>
-                    </div>
+        <!-- Peso e Semanal -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px">
+            <div class="info-card" style="padding:10px;margin:0">
+                <small style="color:#888;font-size:.6rem">⚖️ PESO</small>
+                <div style="display:flex;gap:4px;margin-top:6px">
+                    <input type="number" id="nt-weight" placeholder="kg" step="0.1" style="flex:1;padding:6px;border-radius:6px;border:1px solid #333;background:#1a1a1a;color:#fff;font-size:.8rem">
+                    <button onclick="ntSaveWeight()" style="padding:6px 10px;border-radius:6px;border:none;background:#448aff;color:#fff;font-size:.75rem;cursor:pointer">OK</button>
                 </div>
+                <div id="nt-weightInfo" style="font-size:.65rem;color:#888;margin-top:4px"></div>
             </div>
-
-            <div class="meal-card">
-                <h3>🌙 5ª Refeição - Jantar (~550 kcal)</h3>
-                <p><strong>Proteína (escolher 1):</strong></p>
-                <ul>
-                    <li>Frango sem pele (250g)</li>
-                    <li>Filé de peixe (300g)</li>
-                </ul>
-                <p><strong>Carboidrato (escolher 1):</strong></p>
-                <ul>
-                    <li>Arroz/Mandioca/Cuscuz (100g)</li>
-                    <li>Batata Inglesa/Doce (200g ou 150g assada)</li>
-                </ul>
-                <ul>
-                    <li>Legumes (200g) + Salada verde à vontade</li>
-                </ul>
+            <div class="info-card" style="padding:10px;margin:0;text-align:center">
+                <small style="color:#888;font-size:.6rem">📊 SEMANAL</small>
+                <div id="nt-weeklyDeficit" style="font-size:.9rem;font-weight:600;color:#4CAF50;margin-top:4px">0 kcal</div>
+                <div style="font-size:.6rem;color:#666">déficit acumulado</div>
+                <div id="nt-weeklyLoss" style="font-size:.85rem;font-weight:600;color:#4CAF50;margin-top:2px">~0 kg</div>
+                <div style="font-size:.6rem;color:#666">perda estimada</div>
             </div>
         </div>
 
-        <!-- DIETA BAIXO CARBO (~2.500 kcal) -->
-        <div id="diet-baixo" class="diet-plan" style="display: none;">
-            <div class="meal-card">
-                <h3>🍳 1ª Refeição - Café da Manhã (~400 kcal)</h3>
-                <ul>
-                    <li>Ovo (05 inteiros)</li>
-                    <li>Queijo mussarela (01 fatia)</li>
-                    <li>Chia (10g)</li>
-                    <li>1 colher de vinagre de maçã + 200ml de água</li>
-                </ul>
+        <!-- Adicionar alimento -->
+        <div class="info-card" style="margin-bottom:12px">
+            <h3 style="font-size:.8rem;margin-bottom:8px">➕ Adicionar Alimento</h3>
+            <div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap" id="nt-mealBtns">
+                <button class="diet-btn active" onclick="ntSetMeal('cafe',this)" style="font-size:.65rem;padding:4px 8px">☕ Café</button>
+                <button class="diet-btn" onclick="ntSetMeal('almoco',this)" style="font-size:.65rem;padding:4px 8px">🍛 Almoço</button>
+                <button class="diet-btn" onclick="ntSetMeal('lanche',this)" style="font-size:.65rem;padding:4px 8px">🍉 Lanche</button>
+                <button class="diet-btn" onclick="ntSetMeal('janta',this)" style="font-size:.65rem;padding:4px 8px">🍽️ Janta</button>
             </div>
-
-            <div class="meal-card">
-                <h3>🍌 2ª Refeição - Lanche da Manhã (~200 kcal)</h3>
-                <p><strong>Escolher uma fruta:</strong></p>
-                <ul>
-                    <li>Banana, Laranja, Maçã, Pera (01)</li>
-                    <li>Mamão (100g) | Melão, Morango (150g)</li>
-                </ul>
-            </div>
-
-            <div class="meal-card">
-                <h3>🍽️ 3ª Refeição - Almoço (~650 kcal)</h3>
-                <p><strong>Proteína (escolher 1):</strong></p>
-                <ul>
-                    <li>Frango sem pele (300g)</li>
-                    <li>Filé de peixe (350g)</li>
-                </ul>
-                <ul>
-                    <li>Legumes (200g) + Salada verde à vontade</li>
-                    <li>Abacaxi (200g)</li>
-                </ul>
-                <p><em>*Sem carboidrato pesado nos dias baixo carbo.</em></p>
-            </div>
-
-            <div class="meal-card">
-                <h3>🥤 4ª Refeição - Lanche da Tarde (~400 kcal)</h3>
-                <div class="meal-options">
-                    <div class="meal-option">
-                        <h4>Opção 1 - Mingau</h4>
-                        <ul>
-                            <li>Whey (01 dose) + Aveia (10g)</li>
-                            <li>1 fruta + Iogurte zero (100g)</li>
-                        </ul>
-                    </div>
-                    <div class="meal-option">
-                        <h4>Opção 2 - Sólida</h4>
-                        <ul>
-                            <li>Frango (80g) ou Peixe (100g)</li>
-                            <li>Batata (200g) + Salada verde</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="meal-card">
-                <h3>🌙 5ª Refeição - Jantar (~500 kcal)</h3>
-                <p><strong>Proteína (escolher 1):</strong></p>
-                <ul>
-                    <li>Frango sem pele (300g)</li>
-                    <li>Filé de peixe (350g)</li>
-                </ul>
-                <ul>
-                    <li>Legumes (200g) + Salada verde à vontade</li>
-                </ul>
+            <div style="display:flex;gap:6px;align-items:center">
+                <select id="nt-foodSelect" onchange="ntUpdateUnit()" style="flex:2;padding:8px;border-radius:6px;border:1px solid #333;background:#1a1a1a;color:#fff;font-size:.8rem"></select>
+                <input type="number" id="nt-qty" value="1" style="width:55px;padding:8px;border-radius:6px;border:1px solid #333;background:#1a1a1a;color:#fff;font-size:.8rem;text-align:center">
+                <span id="nt-unitLabel" style="font-size:.7rem;color:#888;min-width:20px">g</span>
+                <button onclick="ntAddFood()" style="padding:8px 14px;border-radius:6px;border:none;background:#4CAF50;color:#fff;font-weight:700;font-size:1rem;cursor:pointer">+</button>
             </div>
         </div>
 
-        <div class="meal-card" style="border-left: 4px solid #FF9800;">
-            <h3>🍫 Snack Diário (~150 kcal) — PERMITIDO!</h3>
-            <p><strong>Escolher 1 por dia (já contabilizado):</strong></p>
-            <ul>
-                <li>1 Trento (130 kcal)</li>
-                <li>2 Bis (134 kcal)</li>
-                <li>1 Bombom Sonho de Valsa/Ouro Branco (~100 kcal)</li>
-                <li>1 Bolinho Ana Maria (140 kcal)</li>
-                <li>2 quadradinhos chocolate 70% (~100 kcal)</li>
-                <li>1 Paçoquinha (~130 kcal)</li>
-                <li>1 Picolé light (~80 kcal)</li>
-                <li>Gelatina zero à vontade (0 kcal)</li>
+        <!-- Log do dia -->
+        <div class="info-card" style="margin-bottom:12px">
+            <h3 style="font-size:.8rem;margin-bottom:8px">📋 Consumo de Hoje</h3>
+            <div id="nt-log"><p style="text-align:center;color:#666;font-size:.75rem">Nenhum alimento registrado</p></div>
+        </div>
+
+        <button onclick="ntResetDay()" style="display:block;margin:0 auto 16px;background:#333;color:#aaa;border:none;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:.7rem">🗑️ Resetar Dia</button>
+
+        <!-- Plano Alimentar Fixo -->
+        <div class="info-card" style="border-left:4px solid #FF9800">
+            <h3>📌 Plano Alimentar - 1700 kcal</h3>
+            <p style="color:#FF9800;font-size:.75rem;margin:8px 0"><b>⏰ Jejum:</b> Ioimbina 20mg + Clembuterol 2ml + Glifage (esperar 45-60min)</p>
+            <p style="font-size:.75rem;margin-bottom:4px"><b>☕ Café da Manhã</b></p>
+            <ul style="font-size:.7rem;margin:0 0 8px 16px;color:#ccc">
+                <li>Cuscuz (cozido): 150g <i>ou</i> 1 Pão Francês</li>
+                <li>Ovos inteiros: 3 unidades</li>
+                <li>Queijo muçarela: 1 fatia (20g)</li>
+                <li>Leite desnatado: 200ml + 2-3 col. leite em pó</li>
             </ul>
-            <p><em>*Comer após almoço ou lanche da tarde. Nunca à noite.</em></p>
-        </div>
-
-        <div class="info-card">
-            <h3>🍽️ Ordem de Consumo</h3>
-            <ol>
-                <li><strong>1º Salada:</strong> Fibras e prebióticos</li>
-                <li><strong>2º Legumes:</strong> Vitaminas e minerais</li>
-                <li><strong>3º Proteínas:</strong> Saciedade prolongada</li>
-                <li><strong>4º Carboidratos:</strong> Energia controlada</li>
-            </ol>
-        </div>
-
-        <div class="info-card">
-            <h3>🏃‍♀️ Aeróbicos</h3>
-            <ul>
-                <li><strong>Frequência:</strong> 5x na semana (bike, esteira, escada ou elíptico)</li>
-                <li><strong>Duração:</strong> 45 min (pós treino ou turno alternado, nunca antes)</li>
-                <li><strong>Intensidade:</strong> FC 120 bpm (com ofegância)</li>
+            <p style="font-size:.75rem;margin-bottom:4px"><b>🍛 Almoço</b></p>
+            <ul style="font-size:.7rem;margin:0 0 8px 16px;color:#ccc">
+                <li>Carne: 150g (Frango, Músculo, Fígado ou Moela)</li>
+                <li>Cuscuz (cozido): 150g</li>
+                <li>Salada verde: à vontade (limão e sal)</li>
             </ul>
+            <p style="font-size:.75rem;margin-bottom:4px"><b>🍉 Lanche da Tarde</b></p>
+            <ul style="font-size:.7rem;margin:0 0 8px 16px;color:#ccc">
+                <li>Melancia: 250g</li>
+                <li>Whey Protein: 1 scoop (30g) com água</li>
+                <li>Docinho: chocolate ou doce de leite (20g)</li>
+            </ul>
+            <p style="font-size:.75rem;margin-bottom:4px"><b>🍽️ Jantar</b></p>
+            <ul style="font-size:.7rem;margin:0 0 8px 16px;color:#ccc">
+                <li>Carré (lombo suíno) grelhado: 150g</li>
+                <li>Cuscuz (cozido): 150g</li>
+                <li>Legumes cozidos: 100g</li>
+            </ul>
+            <p style="font-size:.65rem;color:#666;margin-top:6px"><b>Macros:</b> ~185g P · ~160g C · ~45g G | <b>Água:</b> 4.5-5L/dia</p>
         </div>
 
+        <!-- Substituições -->
         <div class="info-card">
-            <h3>😴 Sono</h3>
-            <ul>
-                <li>Dormir no mínimo 7h por noite, com rotina fixa</li>
-                <li>Evitar telas 1h antes de dormir</li>
-                <li>Ambiente escuro e silencioso</li>
-            </ul>
+            <h3>🔄 Substituições Equivalentes</h3>
+            <table style="width:100%;font-size:.65rem;color:#ccc;border-collapse:collapse;margin-top:8px">
+                <tr style="color:#888;border-bottom:1px solid #333"><td style="padding:3px"><b>Alimento</b></td><td><b>Substituto</b></td><td><b>Qtd</b></td></tr>
+                <tr style="border-bottom:1px solid #222"><td style="padding:3px">Cuscuz 150g</td><td>Batata doce cozida</td><td>150g</td></tr>
+                <tr style="border-bottom:1px solid #222"><td style="padding:3px">Cuscuz 150g</td><td>Inhame/Mandioca</td><td>130g</td></tr>
+                <tr style="border-bottom:1px solid #222"><td style="padding:3px">Cuscuz 150g</td><td>Arroz branco</td><td>130g</td></tr>
+                <tr style="border-bottom:1px solid #222"><td style="padding:3px">Cuscuz 150g</td><td>Tapioca (goma seca)</td><td>50g</td></tr>
+                <tr style="border-bottom:1px solid #222"><td style="padding:3px">Frango 150g</td><td>Músculo bovino</td><td>150g</td></tr>
+                <tr style="border-bottom:1px solid #222"><td style="padding:3px">Frango 150g</td><td>Fígado/Moela</td><td>150-160g</td></tr>
+                <tr style="border-bottom:1px solid #222"><td style="padding:3px">Frango 150g</td><td>Tilápia/Peixe</td><td>170g</td></tr>
+                <tr style="border-bottom:1px solid #222"><td style="padding:3px">Melancia 250g</td><td>Morango</td><td>250g</td></tr>
+                <tr><td style="padding:3px">Melancia 250g</td><td>Mamão</td><td>200g</td></tr>
+            </table>
         </div>
 
-        <div class="info-card">
-            <h3>😌 Estresse e Bem-estar</h3>
-            <ul>
-                <li>Respiração profunda, meditação ou alongamento</li>
-                <li>Pausas ao longo do dia</li>
-                <li>Momentos prazerosos e interações sociais</li>
-            </ul>
-        </div>
-
-        <div class="info-card">
-            <h3>🦷 Higiene Bucal</h3>
-            <ul>
-                <li>Escovar após todas as refeições</li>
-                <li>Limpador de língua diário</li>
-                <li>Enxaguante sem álcool (2x/dia)</li>
-                <li>Frutas cítricas para paladar</li>
-            </ul>
-        </div>
     </div>
 </div>
 
@@ -575,6 +427,7 @@
     <script src="js/ui.js"></script>
     <script src="js/workout.js"></script>
     <script src="js/alarms.js"></script>
+    <script src="js/nutrition.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
