@@ -248,6 +248,21 @@ header {
   transform: scale(1.05);
 }
 
+.workout-day-box.completed {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+
+.workout-day-box.active.completed {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.workout-day-box.today {
+  box-shadow: 0 0 0 2px rgba(68, 138, 255, 0.4);
+}
+
 /* === Main === */
 main { padding: 16px; padding-bottom: 40px; }
 

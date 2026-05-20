@@ -258,10 +258,10 @@ function markDayCompleted(day) {
 }
 
 function updateWeeklyDisplay() {
+    const boxes = document.querySelectorAll('.workout-day-box');
     for (let day = 1; day <= 5; day++) {
-        const dayBox = document.querySelector(`[data-day="${day}"]`);
-        if (weeklyProgress[day]) dayBox.classList.add('completed');
-        else dayBox.classList.remove('completed');
+        if (weeklyProgress[day]) boxes[day - 1].classList.add('completed');
+        else boxes[day - 1].classList.remove('completed');
     }
 }
 

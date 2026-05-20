@@ -60,7 +60,7 @@ function autoResetWeek() {
 function highlightToday() {
     const day = new Date().getDay(); // 0=Dom, 1=Seg...5=Sex, 6=Sab
     if (day >= 1 && day <= 5) {
-        const box = document.querySelector(`.day-box[data-day="${day}"]`);
-        if (box) box.classList.add('today');
+        const boxes = document.querySelectorAll('.workout-day-box');
+        if (boxes[day - 1]) boxes[day - 1].classList.add('today');
     }
 }
