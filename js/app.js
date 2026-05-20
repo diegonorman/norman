@@ -10,6 +10,8 @@ function showSection(section) {
     document.getElementById(section + '-section').classList.add('active');
     document.querySelector(`[onclick="showSection('${section}')"]`).classList.add('active');
     if (section === 'schedule') renderAlarms();
+    const wds = document.querySelector('.workout-days-section');
+    if (wds) wds.style.display = section === 'workout' ? '' : 'none';
 }
 
 function showDiet(type) {
