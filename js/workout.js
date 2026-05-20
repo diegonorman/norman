@@ -100,6 +100,9 @@ function toggleExercise(exerciseId) {
     const wasCompleted = completedExercises[exerciseId] || false;
     completedExercises[exerciseId] = !completedExercises[exerciseId];
     localStorage.setItem('completedExercises', JSON.stringify(completedExercises));
+    if (!wasCompleted) {
+        localStorage.setItem('lastCheckDate_' + currentDay, new Date().toDateString());
+    }
     renderExercises(currentDay);
     updateProgress();
     if (!wasCompleted && completedExercises[exerciseId]) {
@@ -235,12 +238,25 @@ function closeVideo() {
 // Progresso semanal e histórico
 function markDayCompleted(day) {
     const today = new Date();
+    const todayStr = today.toDateString();
     const monthKey = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}`;
     const dayNumber = today.getDate();
-    // Mapeia dia da semana real: 0=Dom, 1=Seg(1), 2=Ter(2), 3=Qua(3), 4=Qui(4), 5=Sex(5), 6=Sab
-    const weekday = today.getDay(); // 1-5 = Seg-Sex
+    const weekday = today.getDay(); // 1=Seg...5=Sex
+
+    // Só marca se algum exercício desse dia foi checkado hoje
+    const workout = workoutData[day];
+    if (!workout) return;
+    let checkedToday = false;
+    workout.exercises.forEach((_, i) => {
+        const id = `${day}-${i}`;
+        if (completedExercises[id] && completedExercises[id] === true) checkedToday = true;
+    });
+    // Verifica se o último check foi hoje (usa timestamp salvo)
+    const lastCheck = localStorage.getItem('lastCheckDate_' + day);
+    if (lastCheck !== todayStr) return;
+
     if (weekday >= 1 && weekday <= 5) {
-        weeklyProgress[weekday] = today.toDateString();
+        weeklyProgress[weekday] = todayStr;
     }
     localStorage.setItem('weeklyProgress', JSON.stringify(weeklyProgress));
     if (!monthlyHistory[monthKey]) monthlyHistory[monthKey] = [];
