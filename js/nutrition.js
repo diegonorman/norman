@@ -381,6 +381,7 @@ function ntRender() {
 
   ntSaveHistory();
   ntRenderWeekly();
+  ntRenderStreak();
 }
 
 // === HISTÓRICO SEMANAL ===
@@ -442,6 +443,7 @@ function ntSaveWeight() {
   localStorage.setItem('ntWeights', JSON.stringify(w));
   document.getElementById('nt-weight').value = '';
   ntRenderWeight();
+  ntRenderChart();
 }
 
 function ntRenderWeight() {
@@ -460,6 +462,112 @@ function ntRenderWeight() {
   el.innerHTML = html;
 }
 
+// === STREAK ===
+function ntCalcStreak() {
+  const h = ntGetHistory();
+  let streak = 0;
+  const today = new Date();
+  // Checar hoje
+  const log = ntGetLog();
+  if (log.items.length > 0) streak = 1;
+  else return 0;
+  // Checar dias anteriores
+  for (let i = 1; i < 365; i++) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const k = d.toISOString().slice(0, 10);
+    if (h[k]) streak++;
+    else break;
+  }
+  return streak;
+}
+
+function ntRenderStreak() {
+  const el = document.getElementById('nt-streak');
+  if (!el) return;
+  const streak = ntCalcStreak();
+  el.textContent = streak + ' dia' + (streak !== 1 ? 's' : '');
+  if (streak >= 7) el.style.color = 'var(--green,#22c55e)';
+  else if (streak >= 3) el.style.color = 'var(--orange,#f59e0b)';
+  else el.style.color = 'var(--text-3,#666)';
+}
+
+// === GRÁFICO DE PESO ===
+function ntRenderChart() {
+  const canvas = document.getElementById('nt-weightChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const w = ntGetWeights();
+  if (w.length < 2) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#666';
+    ctx.font = '12px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Registre peso em 2+ dias para ver o gráfico', canvas.width / 2, canvas.height / 2);
+    return;
+  }
+
+  const last30 = w.slice(-30);
+  const width = canvas.width;
+  const height = canvas.height;
+  const padding = { top: 20, bottom: 25, left: 35, right: 10 };
+  const chartW = width - padding.left - padding.right;
+  const chartH = height - padding.top - padding.bottom;
+
+  const values = last30.map(p => p.kg);
+  const min = Math.min(...values) - 0.5;
+  const max = Math.max(...values) + 0.5;
+  const range = max - min || 1;
+
+  ctx.clearRect(0, 0, width, height);
+
+  // Grid lines
+  ctx.strokeStyle = '#2a2a2a';
+  ctx.lineWidth = 0.5;
+  for (let i = 0; i <= 4; i++) {
+    const y = padding.top + (chartH / 4) * i;
+    ctx.beginPath();
+    ctx.moveTo(padding.left, y);
+    ctx.lineTo(width - padding.right, y);
+    ctx.stroke();
+    ctx.fillStyle = '#555';
+    ctx.font = '9px sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText((max - (range / 4) * i).toFixed(1), padding.left - 4, y + 3);
+  }
+
+  // Line
+  ctx.strokeStyle = '#6366f1';
+  ctx.lineWidth = 2;
+  ctx.lineJoin = 'round';
+  ctx.beginPath();
+  last30.forEach((p, i) => {
+    const x = padding.left + (i / (last30.length - 1)) * chartW;
+    const y = padding.top + ((max - p.kg) / range) * chartH;
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // Points
+  last30.forEach((p, i) => {
+    const x = padding.left + (i / (last30.length - 1)) * chartW;
+    const y = padding.top + ((max - p.kg) / range) * chartH;
+    ctx.fillStyle = '#6366f1';
+    ctx.beginPath();
+    ctx.arc(x, y, 3, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  // Labels (first and last date)
+  ctx.fillStyle = '#555';
+  ctx.font = '8px sans-serif';
+  ctx.textAlign = 'left';
+  ctx.fillText(last30[0].date.slice(5), padding.left, height - 5);
+  ctx.textAlign = 'right';
+  ctx.fillText(last30[last30.length - 1].date.slice(5), width - padding.right, height - 5);
+}
+
 // === INIT ===
 (function ntInit() {
   const sel = document.getElementById('nt-foodSelect');
@@ -474,5 +582,7 @@ function ntRenderWeight() {
   ntPopulateSelect();
   ntRenderCombos();
   ntRenderWeight();
+  ntRenderStreak();
+  ntRenderChart();
   ntRender();
 })();

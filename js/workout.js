@@ -170,9 +170,11 @@ function startTimer(restTime) {
         if (display) display.textContent = formatTime(remaining);
         if (remaining <= 0) {
             clearInterval(timerInterval);
-            timer.remove();
+            timer.style.background = 'rgba(76,175,80,0.95)';
+            timer.querySelector('div').textContent = '✅ GO!';
+            if (navigator.vibrate) navigator.vibrate([300, 150, 300, 150, 500]);
             showNotification('Tempo de descanso acabou! 💪');
-            if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
+            setTimeout(() => timer.remove(), 2000);
         }
     }, 1000);
 }

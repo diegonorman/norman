@@ -129,6 +129,15 @@
             <div id="nt-weekDays" style="display:flex;gap:6px;justify-content:center;margin-top:8px"></div>
         </div>
 
+        <!-- Streak + Gráfico -->
+        <div class="info-card" style="padding:10px;margin-bottom:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+                <div><small style="color:#888;font-size:.6rem">🔥 STREAK</small><div id="nt-streak" style="font-size:1.1rem;font-weight:700;color:var(--orange,#f59e0b)">0 dias</div></div>
+                <div style="text-align:right"><small style="color:#888;font-size:.6rem">📉 EVOLUÇÃO PESO</small></div>
+            </div>
+            <canvas id="nt-weightChart" width="360" height="120" style="width:100%;height:120px;border-radius:8px;background:var(--surface-2,#1c1c1c)"></canvas>
+        </div>
+
         <!-- Adicionar alimento -->
         <div class="info-card" style="margin-bottom:12px">
             <h3 style="font-size:.8rem;margin-bottom:8px">➕ Adicionar Alimento</h3>
