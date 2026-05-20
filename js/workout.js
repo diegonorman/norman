@@ -155,23 +155,22 @@ function startTimer(restTime) {
 
     const timer = document.createElement('div');
     timer.id = 'floating-timer';
-    timer.style.cssText = `position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:150px;height:100px;background:rgba(0,0,0,0.9);color:white;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1000;box-shadow:0 10px 30px rgba(0,0,0,0.5);font-family:Arial,sans-serif;`;
+    timer.className = 'bottom-timer';
     timer.innerHTML = `
-        <div style="font-size:24px;font-weight:bold;color:#4CAF50;">${formatTime(timeInSeconds)}</div>
-        <div style="font-size:12px;opacity:0.8;margin-top:5px;">Descanso</div>
-        <button onclick="closeTimer()" style="position:absolute;top:5px;right:8px;background:none;border:none;color:white;font-size:16px;cursor:pointer;">×</button>
+        <span class="bt-time">${formatTime(timeInSeconds)}</span>
+        <span class="bt-label">Descanso</span>
+        <button class="bt-close" onclick="closeTimer()">×</button>
     `;
     document.body.appendChild(timer);
 
     let remaining = timeInSeconds;
     timerInterval = setInterval(() => {
         remaining--;
-        const display = timer.querySelector('div');
-        if (display) display.textContent = formatTime(remaining);
+        timer.querySelector('.bt-time').textContent = formatTime(remaining);
         if (remaining <= 0) {
             clearInterval(timerInterval);
-            timer.style.background = 'rgba(76,175,80,0.95)';
-            timer.querySelector('div').textContent = '✅ GO!';
+            timer.classList.add('bt-done');
+            timer.querySelector('.bt-time').textContent = '✅ GO!';
             if (navigator.vibrate) navigator.vibrate([300, 150, 300, 150, 500]);
             showNotification('Tempo de descanso acabou! 💪');
             setTimeout(() => timer.remove(), 2000);

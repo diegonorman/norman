@@ -90,163 +90,163 @@
     <div class="nutrition-content">
 
         <!-- Perfil / Calculadora TDEE -->
-        <div class="info-card" id="nt-profile-section" style="margin-bottom:12px"></div>
+        <div class="info-card mb12" id="nt-profile-section"></div>
 
         <!-- Barra de progresso calorias -->
-        <div style="width:100%;height:8px;background:#2a2a2a;border-radius:4px;margin:8px 0;overflow:hidden">
-            <div id="nt-mainBar" style="height:100%;background:linear-gradient(90deg,#4CAF50,#FF9800,#f44336);border-radius:4px;transition:width .3s;width:0%"></div>
+        <div class="nt-bar-wrap">
+            <div id="nt-mainBar" class="nt-bar"></div>
         </div>
 
         <!-- Cards resumo -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px">
-            <div class="info-card" style="padding:10px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">CONSUMIDO</small><div id="nt-consumed" style="font-size:1.2rem;font-weight:700;color:#FF9800">0</div></div>
-            <div class="info-card" style="padding:10px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">RESTANTE</small><div id="nt-remaining" style="font-size:1.2rem;font-weight:700;color:#4CAF50">1700</div></div>
-            <div class="info-card" style="padding:10px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">META</small><div id="nt-goal" style="font-size:1.2rem;font-weight:700;color:#448aff">1700</div></div>
-            <div class="info-card" style="padding:10px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">DÉFICIT HOJE</small><div id="nt-deficit" style="font-size:1.2rem;font-weight:700;color:#4CAF50">2683</div></div>
+        <div class="nt-grid-4">
+            <div class="info-card nt-stat"><small>CONSUMIDO</small><div id="nt-consumed" class="nt-val" style="color:#FF9800">0</div></div>
+            <div class="info-card nt-stat"><small>RESTANTE</small><div id="nt-remaining" class="nt-val" style="color:#4CAF50">1700</div></div>
+            <div class="info-card nt-stat"><small>META</small><div id="nt-goal" class="nt-val" style="color:#448aff">1700</div></div>
+            <div class="info-card nt-stat"><small>DÉFICIT HOJE</small><div id="nt-deficit" class="nt-val" style="color:#4CAF50">2683</div></div>
         </div>
 
         <!-- Macros -->
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px">
-            <div class="info-card" style="padding:8px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">PROTEÍNA</small><div id="nt-prot" style="font-size:.9rem;font-weight:600">0/185g</div><div style="height:4px;background:#2a2a2a;border-radius:2px;margin-top:4px;overflow:hidden"><div id="nt-protBar" style="height:100%;background:#448aff;width:0%;border-radius:2px;transition:width .3s"></div></div></div>
-            <div class="info-card" style="padding:8px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">CARBOIDRATO</small><div id="nt-carb" style="font-size:.9rem;font-weight:600">0/160g</div><div style="height:4px;background:#2a2a2a;border-radius:2px;margin-top:4px;overflow:hidden"><div id="nt-carbBar" style="height:100%;background:#FF9800;width:0%;border-radius:2px;transition:width .3s"></div></div></div>
-            <div class="info-card" style="padding:8px;text-align:center;margin:0"><small style="color:#888;font-size:.6rem">GORDURA</small><div id="nt-fat" style="font-size:.9rem;font-weight:600">0/45g</div><div style="height:4px;background:#2a2a2a;border-radius:2px;margin-top:4px;overflow:hidden"><div id="nt-fatBar" style="height:100%;background:#f44336;width:0%;border-radius:2px;transition:width .3s"></div></div></div>
+        <div class="nt-grid-3">
+            <div class="info-card nt-stat-sm"><small>PROTEÍNA</small><div id="nt-prot" class="nt-val-sm">0/185g</div><div class="nt-macro-bar"><div id="nt-protBar" style="background:#448aff"></div></div></div>
+            <div class="info-card nt-stat-sm"><small>CARBOIDRATO</small><div id="nt-carb" class="nt-val-sm">0/160g</div><div class="nt-macro-bar"><div id="nt-carbBar" style="background:#FF9800"></div></div></div>
+            <div class="info-card nt-stat-sm"><small>GORDURA</small><div id="nt-fat" class="nt-val-sm">0/45g</div><div class="nt-macro-bar"><div id="nt-fatBar" style="background:#f44336"></div></div></div>
         </div>
 
         <!-- Semanal -->
-        <div style="display:grid;grid-template-columns:1fr;gap:6px;margin-bottom:12px">
-            <div class="info-card" style="padding:10px;margin:0;text-align:center">
-                <small style="color:#888;font-size:.6rem">📊 SEMANAL</small>
-                <div id="nt-weeklyDeficit" style="font-size:.9rem;font-weight:600;color:#4CAF50;margin-top:4px">0 kcal</div>
-                <div style="font-size:.6rem;color:#666">déficit acumulado</div>
-                <div id="nt-weeklyLoss" style="font-size:.85rem;font-weight:600;color:#4CAF50;margin-top:2px">~0 kg</div>
-                <div style="font-size:.6rem;color:#666">perda estimada</div>
+        <div class="nt-grid-1">
+            <div class="info-card nt-stat">
+                <small>📊 SEMANAL</small>
+                <div id="nt-weeklyDeficit" class="nt-val-sm" style="color:#4CAF50;margin-top:4px">0 kcal</div>
+                <div class="nt-sub">déficit acumulado</div>
+                <div id="nt-weeklyLoss" class="nt-val-sm" style="color:#4CAF50;margin-top:2px">~0 kg</div>
+                <div class="nt-sub">perda estimada</div>
             </div>
         </div>
 
         <!-- Dias da semana registrados -->
-        <div class="info-card" style="padding:10px;margin-bottom:12px;text-align:center">
-            <small style="color:#888;font-size:.6rem">📅 DIAS REGISTRADOS ESTA SEMANA</small>
-            <div id="nt-weekDays" style="display:flex;gap:6px;justify-content:center;margin-top:8px"></div>
+        <div class="info-card nt-stat mb12">
+            <small>📅 DIAS REGISTRADOS ESTA SEMANA</small>
+            <div id="nt-weekDays" class="nt-weekdays"></div>
         </div>
 
         <!-- Streak + Gráfico -->
-        <div class="info-card" style="padding:10px;margin-bottom:12px">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-                <div><small style="color:#888;font-size:.6rem">🔥 STREAK</small><div id="nt-streak" style="font-size:1.1rem;font-weight:700;color:var(--orange,#f59e0b)">0 dias</div></div>
-                <div style="text-align:right"><small style="color:#888;font-size:.6rem">📉 EVOLUÇÃO PESO</small></div>
+        <div class="info-card mb12" style="padding:10px">
+            <div class="nt-streak-header">
+                <div><small>🔥 STREAK</small><div id="nt-streak" class="nt-streak-val">0 dias</div></div>
+                <div style="text-align:right"><small>📉 EVOLUÇÃO PESO</small></div>
             </div>
-            <canvas id="nt-weightChart" width="360" height="120" style="width:100%;height:120px;border-radius:8px;background:var(--surface-2,#1c1c1c)"></canvas>
+            <canvas id="nt-weightChart" width="360" height="120"></canvas>
         </div>
 
         <!-- Adicionar alimento -->
-        <div class="info-card" style="margin-bottom:12px">
-            <h3 style="font-size:.8rem;margin-bottom:8px">➕ Adicionar Alimento</h3>
-            <div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap" id="nt-mealBtns">
-                <button class="diet-btn active" onclick="ntSetMeal('cafe',this)" style="font-size:.65rem;padding:4px 8px">☕ Café</button>
-                <button class="diet-btn" onclick="ntSetMeal('almoco',this)" style="font-size:.65rem;padding:4px 8px">🍛 Almoço</button>
-                <button class="diet-btn" onclick="ntSetMeal('lanche',this)" style="font-size:.65rem;padding:4px 8px">🍉 Lanche</button>
-                <button class="diet-btn" onclick="ntSetMeal('janta',this)" style="font-size:.65rem;padding:4px 8px">🍽️ Janta</button>
+        <div class="info-card mb12">
+            <h3 class="nt-section-title">➕ Adicionar Alimento</h3>
+            <div class="nt-meal-btns" id="nt-mealBtns">
+                <button class="diet-btn active" onclick="ntSetMeal('cafe',this)">☕ Café</button>
+                <button class="diet-btn" onclick="ntSetMeal('almoco',this)">🍛 Almoço</button>
+                <button class="diet-btn" onclick="ntSetMeal('lanche',this)">🍉 Lanche</button>
+                <button class="diet-btn" onclick="ntSetMeal('janta',this)">🍽️ Janta</button>
             </div>
             <!-- Filtro categorias -->
-            <div id="nt-catBtns" style="display:flex;gap:3px;margin-bottom:8px;flex-wrap:wrap;overflow-x:auto">
-                <button onclick="ntFilterCat('all')" style="opacity:1;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">Todos</button>
-                <button onclick="ntFilterCat('prot')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🥩</button>
-                <button onclick="ntFilterCat('lact')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🧀</button>
-                <button onclick="ntFilterCat('carb')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🍚</button>
-                <button onclick="ntFilterCat('fruta')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🍎</button>
-                <button onclick="ntFilterCat('veg')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🥦</button>
-                <button onclick="ntFilterCat('doce')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🍫</button>
-                <button onclick="ntFilterCat('fast')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🍕</button>
-                <button onclick="ntFilterCat('gord')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">🥜</button>
-                <button onclick="ntFilterCat('beb')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">☕</button>
-                <button onclick="ntFilterCat('custom')" style="opacity:.5;font-size:.6rem;padding:3px 6px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">⭐</button>
+            <div id="nt-catBtns" class="nt-cat-btns">
+                <button onclick="ntFilterCat('all')" class="nt-cat-btn" style="opacity:1">Todos</button>
+                <button onclick="ntFilterCat('prot')" class="nt-cat-btn" style="opacity:.5">🥩</button>
+                <button onclick="ntFilterCat('lact')" class="nt-cat-btn" style="opacity:.5">🧀</button>
+                <button onclick="ntFilterCat('carb')" class="nt-cat-btn" style="opacity:.5">🍚</button>
+                <button onclick="ntFilterCat('fruta')" class="nt-cat-btn" style="opacity:.5">🍎</button>
+                <button onclick="ntFilterCat('veg')" class="nt-cat-btn" style="opacity:.5">🥦</button>
+                <button onclick="ntFilterCat('doce')" class="nt-cat-btn" style="opacity:.5">🍫</button>
+                <button onclick="ntFilterCat('fast')" class="nt-cat-btn" style="opacity:.5">🍕</button>
+                <button onclick="ntFilterCat('gord')" class="nt-cat-btn" style="opacity:.5">🥜</button>
+                <button onclick="ntFilterCat('beb')" class="nt-cat-btn" style="opacity:.5">☕</button>
+                <button onclick="ntFilterCat('custom')" class="nt-cat-btn" style="opacity:.5">⭐</button>
             </div>
-            <div style="display:flex;gap:6px;align-items:center">
-                <select id="nt-foodSelect" onchange="ntUpdateUnit()" style="flex:2;padding:8px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text,#f0f0f0);font-size:.8rem"></select>
-                <input type="number" id="nt-qty" value="1" style="width:55px;padding:8px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text,#f0f0f0);font-size:.8rem;text-align:center">
-                <span id="nt-unitLabel" style="font-size:.7rem;color:var(--text-3,#666);min-width:20px">g</span>
-                <button onclick="ntAddFood()" style="padding:8px 14px;border-radius:6px;border:none;background:var(--green,#22c55e);color:#fff;font-weight:700;font-size:1rem;cursor:pointer">+</button>
+            <div class="nt-add-row">
+                <select id="nt-foodSelect" onchange="ntUpdateUnit()"></select>
+                <input type="number" id="nt-qty" value="1">
+                <span id="nt-unitLabel" class="nt-unit">g</span>
+                <button onclick="ntAddFood()" class="nt-add-btn">+</button>
             </div>
             <!-- Cadastro custom -->
-            <div style="margin-top:8px;display:flex;gap:6px">
-                <button onclick="ntShowAddCustom()" style="flex:1;font-size:.65rem;padding:5px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">➕ Cadastrar Alimento</button>
-                <button onclick="ntSaveCurrentAsCombo()" style="flex:1;font-size:.65rem;padding:5px;border-radius:6px;border:1px solid var(--border,#2a2a2a);background:var(--surface-2,#1c1c1c);color:var(--text-2,#a0a0a0);cursor:pointer">💾 Salvar Combo</button>
+            <div class="nt-secondary-btns">
+                <button onclick="ntShowAddCustom()" class="nt-secondary-btn">➕ Cadastrar Alimento</button>
+                <button onclick="ntSaveCurrentAsCombo()" class="nt-secondary-btn">💾 Salvar Combo</button>
             </div>
-            <div id="nt-customForm" style="display:none;margin-top:8px;padding:10px;background:var(--surface-2,#1c1c1c);border-radius:8px;border:1px solid var(--border,#2a2a2a)">
-                <div style="font-size:.7rem;font-weight:700;margin-bottom:6px;color:var(--text,#f0f0f0)">Cadastrar Alimento (valores por 100g)</div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:.7rem">
-                    <input id="nc-name" placeholder="Nome" style="grid-column:span 2;padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
-                    <input id="nc-kcal" type="number" placeholder="Kcal/100g" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
-                    <input id="nc-prot" type="number" placeholder="Prot (g)" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
-                    <input id="nc-carb" type="number" placeholder="Carb (g)" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
-                    <input id="nc-fat" type="number" placeholder="Gord (g)" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
-                    <select id="nc-unit" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem"><option value="g">Gramas</option><option value="un">Unidade</option><option value="ml">ml</option></select>
-                    <input id="nc-portion" type="number" placeholder="Peso 1un (g)" value="100" style="padding:5px;border-radius:4px;border:1px solid var(--border,#2a2a2a);background:var(--bg,#0a0a0a);color:var(--text,#f0f0f0);font-size:.75rem">
+            <div id="nt-customForm" class="nt-custom-form">
+                <div class="nt-form-title">Cadastrar Alimento (valores por 100g)</div>
+                <div class="nt-form-grid">
+                    <input id="nc-name" placeholder="Nome" class="nt-span2">
+                    <input id="nc-kcal" type="number" placeholder="Kcal/100g">
+                    <input id="nc-prot" type="number" placeholder="Prot (g)">
+                    <input id="nc-carb" type="number" placeholder="Carb (g)">
+                    <input id="nc-fat" type="number" placeholder="Gord (g)">
+                    <select id="nc-unit"><option value="g">Gramas</option><option value="un">Unidade</option><option value="ml">ml</option></select>
+                    <input id="nc-portion" type="number" placeholder="Peso 1un (g)" value="100">
                 </div>
-                <button onclick="ntSaveCustomForm()" style="width:100%;margin-top:6px;padding:6px;background:var(--accent,#6366f1);color:#fff;border:none;border-radius:4px;font-size:.7rem;font-weight:600;cursor:pointer">Salvar</button>
+                <button onclick="ntSaveCustomForm()" class="nt-save-btn">Salvar</button>
             </div>
         </div>
 
         <!-- Combos salvos -->
-        <div id="nt-combos-section" class="info-card" style="margin-bottom:12px">
-            <h3 style="font-size:.8rem;margin-bottom:6px">⚡ Refeições Salvas</h3>
-            <div id="nt-combos"><p style="font-size:.65rem;color:var(--text-3,#666)">Nenhum combo salvo. Adicione alimentos e clique "💾 Salvar Combo"</p></div>
+        <div id="nt-combos-section" class="info-card mb12">
+            <h3 class="nt-section-title-sm">⚡ Refeições Salvas</h3>
+            <div id="nt-combos"><p class="nt-combos-empty">Nenhum combo salvo. Adicione alimentos e clique "💾 Salvar Combo"</p></div>
         </div>
 
         <!-- Log do dia -->
-        <div class="info-card" style="margin-bottom:12px">
-            <h3 style="font-size:.8rem;margin-bottom:8px">📋 Consumo de Hoje</h3>
-            <div id="nt-log"><p style="text-align:center;color:#666;font-size:.75rem">Nenhum alimento registrado</p></div>
+        <div class="info-card mb12">
+            <h3 class="nt-section-title">📋 Consumo de Hoje</h3>
+            <div id="nt-log"><p class="nt-log-empty">Nenhum alimento registrado</p></div>
         </div>
 
-        <button onclick="ntResetDay()" style="display:block;margin:0 auto 16px;background:#333;color:#aaa;border:none;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:.7rem">🗑️ Resetar Dia</button>
+        <button onclick="ntResetDay()" class="nt-reset-btn">🗑️ Resetar Dia</button>
 
         <!-- Plano Alimentar Fixo -->
-        <div class="info-card" style="border-left:4px solid #FF9800">
+        <div class="info-card nt-plan">
             <h3>📌 Plano Alimentar - 1700 kcal</h3>
-            <p style="color:#FF9800;font-size:.75rem;margin:8px 0"><b>⏰ Jejum:</b> Ioimbina 20mg + Clembuterol 2ml + Glifage (esperar 45-60min)</p>
-            <p style="font-size:.75rem;margin-bottom:4px"><b>☕ Café da Manhã</b></p>
-            <ul style="font-size:.7rem;margin:0 0 8px 16px;color:#ccc">
+            <p class="nt-plan-note"><b>⏰ Jejum:</b> Ioimbina 20mg + Clembuterol 2ml + Glifage (esperar 45-60min)</p>
+            <p class="nt-meal-title"><b>☕ Café da Manhã</b></p>
+            <ul>
                 <li>Cuscuz (cozido): 150g <i>ou</i> 1 Pão Francês</li>
                 <li>Ovos inteiros: 3 unidades</li>
                 <li>Queijo muçarela: 1 fatia (20g)</li>
                 <li>Leite desnatado: 200ml + 2-3 col. leite em pó</li>
             </ul>
-            <p style="font-size:.75rem;margin-bottom:4px"><b>🍛 Almoço</b></p>
-            <ul style="font-size:.7rem;margin:0 0 8px 16px;color:#ccc">
+            <p class="nt-meal-title"><b>🍛 Almoço</b></p>
+            <ul>
                 <li>Carne: 150g (Frango, Músculo, Fígado ou Moela)</li>
                 <li>Cuscuz (cozido): 150g</li>
                 <li>Salada verde: à vontade (limão e sal)</li>
             </ul>
-            <p style="font-size:.75rem;margin-bottom:4px"><b>🍉 Lanche da Tarde</b></p>
-            <ul style="font-size:.7rem;margin:0 0 8px 16px;color:#ccc">
+            <p class="nt-meal-title"><b>🍉 Lanche da Tarde</b></p>
+            <ul>
                 <li>Melancia: 250g</li>
                 <li>Whey Protein: 1 scoop (30g) com água</li>
                 <li>Docinho: chocolate ou doce de leite (20g)</li>
             </ul>
-            <p style="font-size:.75rem;margin-bottom:4px"><b>🍽️ Jantar</b></p>
-            <ul style="font-size:.7rem;margin:0 0 8px 16px;color:#ccc">
+            <p class="nt-meal-title"><b>🍽️ Jantar</b></p>
+            <ul>
                 <li>Carré (lombo suíno) grelhado: 150g</li>
                 <li>Cuscuz (cozido): 150g</li>
                 <li>Legumes cozidos: 100g</li>
             </ul>
-            <p style="font-size:.65rem;color:#666;margin-top:6px"><b>Macros:</b> ~185g P · ~160g C · ~45g G | <b>Água:</b> 4.5-5L/dia</p>
+            <p class="nt-plan-footer"><b>Macros:</b> ~185g P · ~160g C · ~45g G | <b>Água:</b> 4.5-5L/dia</p>
         </div>
 
         <!-- Substituições -->
         <div class="info-card">
             <h3>🔄 Substituições Equivalentes</h3>
-            <table style="width:100%;font-size:.65rem;color:#ccc;border-collapse:collapse;margin-top:8px">
-                <tr style="color:#888;border-bottom:1px solid var(--border,#2a2a2a)"><td style="padding:3px"><b>Alimento</b></td><td><b>Substituto</b></td><td><b>Qtd</b></td></tr>
-                <tr style="border-bottom:1px solid var(--border,#2a2a2a)"><td style="padding:3px">Cuscuz 150g</td><td>Batata doce cozida</td><td>150g</td></tr>
-                <tr style="border-bottom:1px solid var(--border,#2a2a2a)"><td style="padding:3px">Cuscuz 150g</td><td>Inhame/Mandioca</td><td>130g</td></tr>
-                <tr style="border-bottom:1px solid var(--border,#2a2a2a)"><td style="padding:3px">Cuscuz 150g</td><td>Arroz branco</td><td>130g</td></tr>
-                <tr style="border-bottom:1px solid var(--border,#2a2a2a)"><td style="padding:3px">Cuscuz 150g</td><td>Tapioca (goma seca)</td><td>50g</td></tr>
-                <tr style="border-bottom:1px solid var(--border,#2a2a2a)"><td style="padding:3px">Frango 150g</td><td>Músculo bovino</td><td>150g</td></tr>
-                <tr style="border-bottom:1px solid var(--border,#2a2a2a)"><td style="padding:3px">Frango 150g</td><td>Fígado/Moela</td><td>150-160g</td></tr>
-                <tr style="border-bottom:1px solid var(--border,#2a2a2a)"><td style="padding:3px">Frango 150g</td><td>Tilápia/Peixe</td><td>170g</td></tr>
-                <tr style="border-bottom:1px solid var(--border,#2a2a2a)"><td style="padding:3px">Melancia 250g</td><td>Morango</td><td>250g</td></tr>
-                <tr><td style="padding:3px">Melancia 250g</td><td>Mamão</td><td>200g</td></tr>
+            <table class="nt-subs-table">
+                <tr class="nt-th"><td><b>Alimento</b></td><td><b>Substituto</b></td><td><b>Qtd</b></td></tr>
+                <tr><td>Cuscuz 150g</td><td>Batata doce cozida</td><td>150g</td></tr>
+                <tr><td>Cuscuz 150g</td><td>Inhame/Mandioca</td><td>130g</td></tr>
+                <tr><td>Cuscuz 150g</td><td>Arroz branco</td><td>130g</td></tr>
+                <tr><td>Cuscuz 150g</td><td>Tapioca (goma seca)</td><td>50g</td></tr>
+                <tr><td>Frango 150g</td><td>Músculo bovino</td><td>150g</td></tr>
+                <tr><td>Frango 150g</td><td>Fígado/Moela</td><td>150-160g</td></tr>
+                <tr><td>Frango 150g</td><td>Tilápia/Peixe</td><td>170g</td></tr>
+                <tr><td>Melancia 250g</td><td>Morango</td><td>250g</td></tr>
+                <tr><td>Melancia 250g</td><td>Mamão</td><td>200g</td></tr>
             </table>
         </div>
 
